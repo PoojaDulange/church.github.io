@@ -1,6 +1,5 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-// import FontAwesomeIcon from 'fontaw'
 import {
   cilBell,
   cilCalculator,
@@ -16,57 +15,63 @@ import {
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
+const array = ['o', 'p']
+var randomItem = array[Math.floor(Math.random() * array.length)]
+if (randomItem == 'o') {
+  localStorage.setItem('name', 'Organization')
+} else {
+  localStorage.setItem('name', 'People')
+}
 const _nav = [
   {
     component: CNavItem,
-    name: 'Super Admin Dashboard',
+    name: 'User Dashboard',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    // badge: {
+    //   color: 'info',
+    //   text: 'NEW',
+    // },
   },
+
   {
     component: CNavGroup,
-    name: 'Super Admin',
-    icon: <i className="fa-solid fa-user-tie m-auto"></i>,
+    name: localStorage.getItem('name'),
+    icon: <i className="fa-solid fa-building-user m-auto"></i>,
     items: [
       {
         component: CNavItem,
-        name: 'Church',
-        to: 'forms/church-table',
-        icon: <i className="fa-solid fa-church mx-3"></i>,
+        name: ' Profile',
+        to: 'forms/user-profile',
+        icon: <i className="fa-solid fa-id-card mx-3 "></i>,
+
+        // icon: <CIcon icon={cilDrop} cutomClassName="nav-icon" />,
       },
       {
         component: CNavItem,
-        name: 'Church Admin',
-        to: 'forms/form-control',
-        icon: <i className="fa-regular fa-rectangle-list mx-3"></i>,
+        name: 'Reports',
+        to: 'forms/user-report-form',
+        icon: <i className="fa-solid fa-file-lines mx-3"></i>,
+      },
+      {
+        component: CNavItem,
+        name: 'Contribution',
+        to: 'forms/contribution-form',
+        icon: <i className="fa-solid fa-money-check-dollar mx-3"></i>,
+      },
+      {
+        component: CNavItem,
+        name: 'Pledge Categories',
+        to: 'forms/pledged-category',
+        icons: <i className="fa-regular fa-list-check"></i>,
       },
     ],
   },
-  // {
-  //   component: CNavTitle,
-  //   name: 'Components',
-  // },
-  // {
-  //   component: CNavGroup,
-  //   name: 'Base',
-  //   to: '/base',
-  //   icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-  //   items: [
-  //     {
-  //       component: CNavItem,
-  //       name: 'Accordion',
-  //       to: '/base/accordion',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Breadcrumb',
-  //       to: '/base/breadcrumbs',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Cards',
-  //       to: '/base/cards',
-  //     },
+  //   {
+  //     component: CNavItem,
+  //     name: 'Cards',
+  //     to: '/base/cards',
+  //   },
   //     {
   //       component: CNavItem,
   //       name: 'Carousel',

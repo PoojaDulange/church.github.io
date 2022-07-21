@@ -35,7 +35,7 @@ const WidgetsBrand = ({ withCharts }) => {
   }
 
   return (
-    <CRow>
+    <CRow className="my-5">
       <CCol sm={6} lg={3}>
         <CWidgetStatsD
           className="mb-4"

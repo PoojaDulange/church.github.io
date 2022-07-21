@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
+const Dashboard1 = React.lazy(() => import('./views/dashboard/Dashboard1'))
+
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 
@@ -29,6 +31,19 @@ const Dropdowns = React.lazy(() => import('./views/buttons/dropdowns/Dropdowns')
 const ChecksRadios = React.lazy(() => import('./views/forms/checks-radios/ChecksRadios'))
 const FloatingLabels = React.lazy(() => import('./views/forms/floating-labels/FloatingLabels'))
 const FormControl = React.lazy(() => import('./views/forms/form-control/FormControl'))
+const ChurchForm = React.lazy(() => import('./views/forms/church-form/ChurchForm'))
+const PledgedCategory = React.lazy(() => import('./views/forms/pledged-category/PledgedCategory'))
+const ReportForm = React.lazy(() => import('./views/forms/report-form/ReportForm'))
+const ChurchProfile = React.lazy(() => import('./views/forms/church-profile/ChurchProfile'))
+const UserProfile = React.lazy(() => import('./views/forms/user-profile/UserProfile'))
+const UserReportForm = React.lazy(() => import('./views/forms/user-report-form/UserReportForm'))
+const ContributionForm = React.lazy(() =>
+  import('./views/forms/contribution-form/ContributionForm'),
+)
+const ChurchTable = React.lazy(() => import('./views/forms/church-table/ChurchTable'))
+const OrganizationForm = React.lazy(() =>
+  import('./views/forms/organization-form/OrganizationForm'),
+)
 const InputGroup = React.lazy(() => import('./views/forms/input-group/InputGroup'))
 const Layout = React.lazy(() => import('./views/forms/layout/Layout'))
 const Range = React.lazy(() => import('./views/forms/range/Range'))
@@ -53,6 +68,7 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
+  { path: '/dashboard1', name: 'Dashboard', element: Dashboard1 },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
@@ -78,6 +94,15 @@ const routes = [
   { path: '/charts', name: 'Charts', element: Charts },
   { path: '/forms', name: 'Forms', element: FormControl, exact: true },
   { path: '/forms/form-control', name: 'Form Control', element: FormControl },
+  { path: '/forms/church-form', name: 'Church Form', element: ChurchForm },
+  { path: '/forms/pledged-category', name: 'Pledged Category', element: PledgedCategory },
+  { path: '/forms/report-form', name: 'ReportForm', element: ReportForm },
+  { path: '/forms/church-profile', name: 'ChurchProfile', element: ChurchProfile },
+  { path: '/forms/user-profile', name: 'UserProfile', element: UserProfile },
+  { path: '/forms/user-report-form', name: 'UserReportForm', element: UserReportForm },
+  { path: '/forms/contribution-form', name: 'Contribution Form', element: ContributionForm },
+  { path: '/forms/church-table', name: 'Church Table', element: ChurchTable },
+  { path: '/forms/organization-form', name: 'Organization Form', element: OrganizationForm },
   { path: '/forms/select', name: 'Select', element: Select },
   { path: '/forms/checks-radios', name: 'Checks & Radios', element: ChecksRadios },
   { path: '/forms/range', name: 'Range', element: Range },

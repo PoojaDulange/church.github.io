@@ -1,11 +1,47 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { CCard, CCardBody, CCardHeader, CCol, CFormCheck, CFormSwitch, CRow } from '@coreui/react'
 import { DocsExample } from 'src/components'
 
-const ChecksRadios = () => {
+const ChecksRadios = ({ onChange }) => {
   return (
     <CRow>
       <CCol xs={12}>
+        <CCard className="mb-4">
+          <CCardHeader>
+            <strong>Select User</strong>
+          </CCardHeader>
+          <CCardBody>
+            <DocsExample href="forms/checks-radios#radios">
+              <CFormCheck
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+                label="Super Admin"
+                value="sadmin"
+                onChange={onChange}
+              />
+              <CFormCheck
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+                label="Admin"
+                value="admin"
+                onChange={onChange}
+              />
+              <CFormCheck
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault3"
+                label="User"
+                value="user"
+                onChange={onChange}
+              />
+            </DocsExample>
+          </CCardBody>
+        </CCard>
+      </CCol>
+      {/* <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
             <strong>React Checkbox</strong>
@@ -36,35 +72,7 @@ const ChecksRadios = () => {
           </CCardBody>
         </CCard>
       </CCol>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Radio</strong>
-          </CCardHeader>
-          <CCardBody>
-            <p className="text-medium-emphasis small">
-              Add the <code>disabled</code> attribute and the associated <code>&lt;label&gt;</code>s
-              are automatically styled to match with a lighter color to help indicate the
-              input&#39;s state.
-            </p>
-            <DocsExample href="forms/checks-radios#radios">
-              <CFormCheck
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                label="Default radio"
-              />
-              <CFormCheck
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
-                label="Checked radio"
-                defaultChecked
-              />
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
+
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
@@ -384,7 +392,7 @@ const ChecksRadios = () => {
             </DocsExample>
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
     </CRow>
   )
 }

@@ -6,6 +6,7 @@ import {
   CCardHeader,
   CCol,
   CForm,
+  CFormCheck,
   CFormInput,
   CFormLabel,
   CFormTextarea,
@@ -14,34 +15,100 @@ import {
 import { DocsExample } from 'src/components'
 
 const FormControl = () => {
+  const user = localStorage.getItem('user')
   return (
-    <CRow>
-      <CCol xs={12}>
-        <CCard className="mb-4">
-          <CCardHeader>
-            <strong>React Form Control</strong>
-          </CCardHeader>
-          <CCardBody>
-            <DocsExample href="forms/form-control">
-              <CForm>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="exampleFormControlInput1">Email address</CFormLabel>
-                  <CFormInput
-                    type="email"
-                    id="exampleFormControlInput1"
-                    placeholder="name@example.com"
-                  />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="exampleFormControlTextarea1">Example textarea</CFormLabel>
-                  <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
-                </div>
-              </CForm>
-            </DocsExample>
-          </CCardBody>
-        </CCard>
-      </CCol>
-      <CCol xs={12}>
+    <div>
+      <CRow>
+        <CCol xs={12}>
+          <CCard className="mb-4 col-8 m-auto">
+            <CCardHeader className="text-center">
+              {user == 'sadmin' && <strong>Church Admin</strong>}
+              {user == 'admin' && <strong>User</strong>}
+              {user == 'user' && <strong>User</strong>}
+            </CCardHeader>
+            <CCardBody>
+              <DocsExample href="forms/form-control">
+                <CForm>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="firstName">FirstName</CFormLabel>
+                    <CFormInput type="text" id="firstName" placeholder="Enter First Name" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="middleName">MiddleName</CFormLabel>
+                    <CFormInput type="text" id="middleName" placeholder="Enter Middle Name" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="lastName">LastName</CFormLabel>
+                    <CFormInput type="text" id="lastName" placeholder="Enter Last Name" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="email">Email</CFormLabel>
+                    <CFormInput type="email" id="email" placeholder="Enter Email" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="password">Password</CFormLabel>
+                    <CFormInput type="password" id="password" placeholder="Enter Password" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="confirmPass">confirm Password</CFormLabel>
+                    <CFormInput
+                      type="text"
+                      id="confirmPass"
+                      placeholder="Enter Re-Enter Password"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="address">Address</CFormLabel>
+                    <CFormTextarea
+                      id="address"
+                      rows="3"
+                      placeholder="Enter Address"
+                    ></CFormTextarea>
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="city">city</CFormLabel>
+                    <CFormInput type="text" id="city" placeholder="Enter city" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="zipcode">ZipCode</CFormLabel>
+                    <CFormInput type="text" id="zipcode" placeholder="Enter Zipcode" />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="tel">TelNo</CFormLabel>
+                    <CFormInput type="number" id="tel" placeholder="Enter Tel. No." />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="mobile">Mobile</CFormLabel>
+                    <CFormInput type="text" id="mobile" placeholder="Enter Mobile No." />
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel>Gender:</CFormLabel>
+                    <CRow>
+                      <CCol>
+                        <CFormCheck type="radio" id="male" label="Male" />
+                        <CFormCheck type="radio" id="female" label="Female" />
+                      </CCol>
+                    </CRow>
+                  </div>
+                  {/* <div className="mb-3">
+                  <CFormLabel>IsChurchMemeber</CFormLabel>
+                  <CFormCheck type="check" id="yse" label="yse" />
+                  <CFormCheck type="check" id="no" label="No" />
+                </div> */}
+                  <div className="text-center">
+                    <CButton className="mx-5" color="primary">
+                      Submit
+                    </CButton>
+                    <CButton className="mx-5" color="danger">
+                      Cancel
+                    </CButton>
+                  </div>
+                </CForm>
+              </DocsExample>
+            </CCardBody>
+          </CCard>
+        </CCol>
+        {/* <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
             <strong>React Form Control</strong> <small>Sizing</small>
@@ -240,8 +307,9 @@ const FormControl = () => {
             </DocsExample>
           </CCardBody>
         </CCard>
-      </CCol>
-    </CRow>
+      </CCol> */}
+      </CRow>
+    </div>
   )
 }
 

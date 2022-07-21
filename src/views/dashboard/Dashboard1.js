@@ -1,5 +1,4 @@
 import React from 'react'
-import image from '../../assets/images/website.png'
 
 import {
   CAvatar,
@@ -54,13 +53,10 @@ import avatar6 from 'src/assets/images/avatars/6.jpg'
 
 import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
-import { useLocation } from 'react-router-dom'
 
-// eslint-disable-next-line react/prop-types
 const Dashboard = () => {
-  // console.log(user1)
-
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+
   const progressExample = [
     { title: 'Visits', value: '29.703 Users', percent: 40, color: 'success' },
     { title: 'Unique', value: '24.093 Users', percent: 20, color: 'info' },
@@ -183,10 +179,9 @@ const Dashboard = () => {
   ]
 
   return (
-    <div className="text-center">
-      <img src={image} alt="Construction"></img>
-      {/* <WidgetsDropdown />
-      <CCard className="mb-4">
+    <>
+      <WidgetsDropdown />
+      {/* <CCard className="mb-4">
         <CCardBody>
           <CRow>
             <CCol sm={5}>
@@ -311,11 +306,12 @@ const Dashboard = () => {
             ))}
           </CRow>
         </CCardFooter>
-      </CCard>
+      </CCard> */}
+      <div className="mt-5">
+        <WidgetsBrand withCharts />
+      </div>
 
-      <WidgetsBrand withCharts />
-
-      <CRow>
+      {/* <CRow>
         <CCol xs>
           <CCard className="mb-4">
             <CCardHeader>Traffic {' & '} Sales</CCardHeader>
@@ -459,7 +455,7 @@ const Dashboard = () => {
           </CCard>
         </CCol>
       </CRow> */}
-    </div>
+    </>
   )
 }
 

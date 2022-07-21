@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, createContext, useContext } from 'react'
+import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom'
 import {
   CButton,
   CCard,
   CCardBody,
   CCardGroup,
+  CCardHeader,
   CCol,
   CContainer,
   CForm,
@@ -15,8 +16,29 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
+import image from '../../images/image2.jpg'
+import ChecksRadios from '../../forms/checks-radios/ChecksRadios.js'
+import Dashboard from 'src/views/dashboard/Dashboard'
+import DefaultLayout from 'src/layout/DefaultLayout'
+// import UserContext from '../../../context/UserContext'
 
 const Login = () => {
+  const [user, setUser] = useState()
+  const [path, setPath] = useState()
+  // const { dispatch } = useContext(UserContext)
+  const navigate = useNavigate()
+  // localStorage.setItem('user', null)
+  const handleChange = (e) => {
+    e.preventDefault()
+    // const value = e.target.value
+    setUser(e.target.value)
+    localStorage.setItem('user', e.target.value)
+  }
+  // const handleClick = (e) => {
+  //   e.preventDefault()
+  //   // dispatch({ type: 'LOGIN', payload: user })
+  //   navigate('/dashboard')
+  // }
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -24,9 +46,12 @@ const Login = () => {
           <CCol md={8}>
             <CCardGroup>
               <CCard className="p-4">
+                <CCardHeader className="text-center">
+                  <h3>Login</h3>
+                </CCardHeader>
                 <CCardBody>
                   <CForm>
-                    <h1>Login</h1>
+                    <ChecksRadios onChange={handleChange} />
                     <p className="text-medium-emphasis">Sign In to your account</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>
@@ -45,15 +70,40 @@ const Login = () => {
                       />
                     </CInputGroup>
                     <CRow>
+                      {console.log(user)}
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
-                          Login
-                        </CButton>
+                        {user == 'sadmin' && (
+                          <Link to="/dashboard">
+                            <CButton color="primary" className="px-4">
+                              Login
+                            </CButton>
+                          </Link>
+                        )}
+                        {user == 'admin' && (
+                          <Link to="/dashboard1">
+                            <CButton color="primary" className="px-4">
+                              Login
+                            </CButton>
+                          </Link>
+                        )}
+                        {user == 'user' && (
+                          <Link to="/dashboard1">
+                            <CButton color="primary" className="px-4">
+                              Login
+                            </CButton>
+                          </Link>
+                        )}
+                        {/* </UserContext.Provider> */}
                       </CCol>
                       <CCol xs={6} className="text-right">
                         <CButton color="link" className="px-0">
                           Forgot password?
                         </CButton>
+                      </CCol>
+                      <CCol>
+                        <p className="py-5">
+                          New User?<Link to="/register">Register</Link>
+                        </p>
                       </CCol>
                     </CRow>
                   </CForm>
@@ -62,16 +112,7 @@ const Login = () => {
               <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Sign up</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Register Now!
-                      </CButton>
-                    </Link>
+                    <img style={{ width: '100%', height: 'auto' }} src={image} alt="Image"></img>
                   </div>
                 </CCardBody>
               </CCard>

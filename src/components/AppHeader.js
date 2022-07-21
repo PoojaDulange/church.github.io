@@ -17,6 +17,7 @@ import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from '@coreui/icons'
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 import { logo } from 'src/assets/brand/logo'
+import { cilSpeedometer } from '@coreui/icons'
 
 const AppHeader = () => {
   const dispatch = useDispatch()
@@ -31,7 +32,17 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <CHeaderBrand className="mx-auto d-md-none" to="/">
+        {sidebarShow == false && (
+          <CHeaderNav>
+            <CNavItem>
+              <i className="fa-solid fa-place-of-worship fa-fw mx-3"></i>
+            </CNavItem>
+            <CNavItem>
+              <h4>Commack Church</h4>
+            </CNavItem>
+          </CHeaderNav>
+        )}
+        {/* <CHeaderBrand className="mx-auto d-md-none" to="/">
           <CIcon icon={logo} height={48} alt="Logo" />
         </CHeaderBrand>
         <CHeaderNav className="d-none d-md-flex me-auto">
@@ -63,8 +74,8 @@ const AppHeader = () => {
               <CIcon icon={cilEnvelopeOpen} size="lg" />
             </CNavLink>
           </CNavItem>
-        </CHeaderNav>
-        <CHeaderNav className="ms-3">
+        </CHeaderNav> */}
+        <CHeaderNav className="d-none d-md-flex ms-auto">
           <AppHeaderDropdown />
         </CHeaderNav>
       </CContainer>

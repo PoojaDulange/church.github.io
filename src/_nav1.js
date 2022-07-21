@@ -1,6 +1,5 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-// import FontAwesomeIcon from 'fontaw'
 import {
   cilBell,
   cilCalculator,
@@ -19,79 +18,83 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 const _nav = [
   {
     component: CNavItem,
-    name: 'Super Admin Dashboard',
+    name: 'Admin Dashboard',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
     component: CNavGroup,
-    name: 'Super Admin',
+    name: 'Admin',
     icon: <i className="fa-solid fa-user-tie m-auto"></i>,
     items: [
       {
         component: CNavItem,
-        name: 'Church',
-        to: 'forms/church-table',
-        icon: <i className="fa-solid fa-church mx-3"></i>,
+        name: 'Report',
+        to: 'forms/report-form',
+        icon: <i className="fa-solid fa-file-lines mx-3"></i>,
       },
       {
         component: CNavItem,
-        name: 'Church Admin',
-        to: 'forms/form-control',
-        icon: <i className="fa-regular fa-rectangle-list mx-3"></i>,
+        name: 'Church Profile',
+        to: 'forms/church-profile',
+        icon: <i className="fa-solid fa-id-card mx-3"></i>,
       },
     ],
   },
-  // {
-  //   component: CNavTitle,
-  //   name: 'Components',
-  // },
-  // {
-  //   component: CNavGroup,
-  //   name: 'Base',
-  //   to: '/base',
-  //   icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
-  //   items: [
-  //     {
-  //       component: CNavItem,
-  //       name: 'Accordion',
-  //       to: '/base/accordion',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Breadcrumb',
-  //       to: '/base/breadcrumbs',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Cards',
-  //       to: '/base/cards',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Carousel',
-  //       to: '/base/carousels',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Collapse',
-  //       to: '/base/collapses',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'List group',
-  //       to: '/base/list-groups',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Navs & Tabs',
-  //       to: '/base/navs',
-  //     },
-  //     {
-  //       component: CNavItem,
-  //       name: 'Pagination',
-  //       to: '/base/paginations',
-  //     },
+
+  {
+    component: CNavGroup,
+    name: 'Master Data',
+    icon: <i className="fa-solid fa-caret-down m-auto"></i>,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Organization',
+        to: 'forms/organization-form',
+        icon: <i className="fa-solid fa-building-columns mx-3"></i>,
+      },
+      {
+        component: CNavItem,
+        name: 'People',
+        to: 'forms/form-control',
+        icon: <i className="fa-solid fa-user mx-3"></i>,
+      },
+      {
+        component: CNavItem,
+        name: 'Contribution',
+        to: 'forms/contribution-form',
+        icon: <i className="fa-solid fa-money-check-dollar mx-3"></i>,
+      },
+      {
+        component: CNavItem,
+        name: 'Pledge Categories',
+        to: 'forms/pledged-category',
+        icon: <i className="fa-solid fa-table-list mx-3"></i>,
+      },
+      // {
+      //   component: CNavItem,
+      //   name: 'Countries',
+      //   to: '/',
+      //   icon: <i className="fa-solid fa-flag"></i>,
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'State',
+      //   to: '/',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Cities',
+      //   to: '/',
+      //   icon: <i className="fa-solid fa-city"></i>,
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Races',
+      //   to: '/',
+      // },
+    ],
+  },
   //     {
   //       component: CNavItem,
   //       name: 'Placeholders',
