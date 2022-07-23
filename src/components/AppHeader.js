@@ -25,7 +25,7 @@ const AppHeader = () => {
 
   return (
     <CHeader position="sticky" className="mb-4">
-      <CContainer fluid>
+      <CContainer fluid style={{ width: '100%', height: 'auto' }}>
         <CHeaderToggler
           className="ps-1"
           onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
@@ -33,7 +33,7 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         {sidebarShow == false && (
-          <CHeaderNav>
+          <CHeaderNav style={{ width: '100%', height: 'auto' }}>
             <CNavItem>
               <i className="fa-solid fa-place-of-worship fa-fw mx-3"></i>
             </CNavItem>
@@ -75,7 +75,7 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
         </CHeaderNav> */}
-        <CHeaderNav className="d-none d-md-flex ms-auto">
+        <CHeaderNav className="d-none d-md-flex ms-auto" style={{ width: '100%', height: 'auto' }}>
           <AppHeaderDropdown />
         </CHeaderNav>
       </CContainer>

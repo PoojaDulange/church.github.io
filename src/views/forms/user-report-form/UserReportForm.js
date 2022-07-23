@@ -22,7 +22,7 @@ const UserReportForm = () => {
       <div className="text-center">
         <h2>User Report</h2>
       </div>
-      <CCard className="mt-5 text-center m-auto" style={{ height: '18rem', width: '30%' }}>
+      <CCard className="mt-5 text-center m-auto" style={{ height: '100%', width: 'auto' }}>
         <CCardHeader>
           <h3>User Name</h3>
         </CCardHeader>

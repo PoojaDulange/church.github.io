@@ -40,7 +40,7 @@ const Contribution = () => {
               </div>
               <div className="mb-3">
                 <CFormLabel htmlFor="name">PledgeCategoryName</CFormLabel>
-                <CDropdown className="mx-5" id="name">
+                <CDropdown className="mx-3" id="name">
                   <CDropdownToggle color="secondary">PledgeCategory</CDropdownToggle>
                   <CDropdownMenu>
                     <CDropdownItem href="#">Pledged</CDropdownItem>

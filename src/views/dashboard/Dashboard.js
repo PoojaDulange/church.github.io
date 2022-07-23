@@ -184,7 +184,7 @@ const Dashboard = () => {
 
   return (
     <div className="text-center">
-      <img src={image} alt="Construction"></img>
+      <img src={image} alt="Construction" style={{ width: '100%', height: 'auto' }}></img>
       {/* <WidgetsDropdown />
       <CCard className="mb-4">
         <CCardBody>

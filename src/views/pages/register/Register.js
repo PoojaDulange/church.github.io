@@ -71,7 +71,10 @@ const Register = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
+              <CCard
+                className="text-white bg-primary py-5"
+                style={{ width: '100%', height: 'auto' }}
+              >
                 <CCardBody className="text-center">
                   <div>
                     <Carousels />

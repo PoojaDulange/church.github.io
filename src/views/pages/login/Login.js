@@ -42,10 +42,10 @@ const Login = () => {
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
-        <CRow className="justify-content-center">
+        <CRow className="justify-content-center" style={{ width: '100%', height: 'auto' }}>
           <CCol md={8}>
-            <CCardGroup>
-              <CCard className="p-4">
+            <CCardGroup style={{ width: '100%', height: 'auto' }}>
+              <CCard style={{ width: '100%', height: 'auto' }}>
                 <CCardHeader className="text-center">
                   <h3>Login</h3>
                 </CCardHeader>
@@ -109,7 +109,10 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
+              <CCard
+                className="text-white bg-primary py-5"
+                style={{ width: '100%', height: 'auto' }}
+              >
                 <CCardBody className="text-center">
                   <div>
                     <img style={{ width: '100%', height: 'auto' }} src={image} alt="Image"></img>

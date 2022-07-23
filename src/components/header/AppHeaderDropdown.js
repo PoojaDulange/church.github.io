@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom'
 
 const AppHeaderDropdown = () => {
   return (
-    <CDropdown variant="nav-item">
+    <CDropdown variant="nav-item" style={{ width: '100%', height: 'auto' }}>
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
         <CAvatar src={avatar8} size="md" />
       </CDropdownToggle>
