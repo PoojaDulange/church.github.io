@@ -66,17 +66,24 @@ const Register = () => {
                       <CButton color="primary">Create Account</CButton>
                     </div>
                     <p className="py-5">
-                      Already have an account?<Link to="/">Login</Link>
+                      Already have an account?
+                      <Link to="/" style={{ textDecoration: 'none' }}>
+                        Login
+                      </Link>
                     </p>
                   </CForm>
                 </CCardBody>
               </CCard>
               <CCard
-                className="text-white bg-primary py-5"
+                className="text-black py-5 content-center"
                 style={{ width: '100%', height: 'auto' }}
               >
-                <CCardBody className="text-center">
-                  <div>
+                <CCardBody
+                  className="content-center m-auto "
+                  style={{ display: 'flex' }}
+                  justify-content-center
+                >
+                  <div className="m-auto">
                     <Carousels />
                     {/* <img src={image} alt="Image" className="responsive"></img> */}
                   </div>

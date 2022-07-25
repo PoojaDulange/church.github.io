@@ -61,9 +61,9 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Pledge Categories',
+        name: 'Pledged Category',
         to: 'forms/pledged-category',
-        icons: <i className="fa-regular fa-list-check"></i>,
+        icon: <i className="fa-solid fa-table-list mx-3"></i>,
       },
     ],
   },

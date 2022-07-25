@@ -16,7 +16,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
-import image from '../../images/image2.jpg'
+import image from '../../../assets/images/Login.png'
 import ChecksRadios from '../../forms/checks-radios/ChecksRadios.js'
 import Dashboard from 'src/views/dashboard/Dashboard'
 import DefaultLayout from 'src/layout/DefaultLayout'
@@ -102,7 +102,11 @@ const Login = () => {
                       </CCol>
                       <CCol>
                         <p className="py-5">
-                          New User?<Link to="/register">Register</Link>
+                          New User?
+                          <Link to="/register" style={{ textDecoration: 'none' }}>
+                            {' '}
+                            Register
+                          </Link>
                         </p>
                       </CCol>
                     </CRow>
@@ -110,11 +114,15 @@ const Login = () => {
                 </CCardBody>
               </CCard>
               <CCard
-                className="text-white bg-primary py-5"
+                className="text-black py-5 content center"
                 style={{ width: '100%', height: 'auto' }}
               >
-                <CCardBody className="text-center">
-                  <div>
+                <CCardBody
+                  className="text-center m-auto"
+                  style={{ display: 'flex' }}
+                  justify-content-center
+                >
+                  <div className="m-auto">
                     <img style={{ width: '100%', height: 'auto' }} src={image} alt="Image"></img>
                   </div>
                 </CCardBody>
