@@ -25,7 +25,7 @@ const ChecksRadios = ({ onChange }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault2"
-                label="Admin"
+                label="Church Admin"
                 value="admin"
                 onChange={onChange}
               />

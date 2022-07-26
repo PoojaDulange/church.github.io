@@ -26,7 +26,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'User Dashboard',
-    to: '/dashboard',
+    to: '/forms/user-contribution-table',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
     // badge: {
     //   color: 'info',
@@ -49,12 +49,6 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Reports',
-        to: 'forms/user-report-form',
-        icon: <i className="fa-solid fa-file-lines mx-3"></i>,
-      },
-      {
-        component: CNavItem,
         name: 'Contribution',
         to: 'forms/contribution-form',
         icon: <i className="fa-solid fa-money-check-dollar mx-3"></i>,
@@ -66,6 +60,12 @@ const _nav = [
         icon: <i className="fa-solid fa-table-list mx-3"></i>,
       },
     ],
+  },
+  {
+    component: CNavItem,
+    name: 'LogOut',
+    to: '/',
+    icon: <i className="fa-solid fa-arrow-right-from-bracket mx-3"></i>,
   },
   //   {
   //     component: CNavItem,

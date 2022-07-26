@@ -10,6 +10,7 @@ import {
   CFormInput,
   CButton,
 } from '@coreui/react'
+import { Link } from 'react-router-dom'
 
 const organization = () => {
   return (
@@ -58,9 +59,16 @@ const organization = () => {
                 <CFormInput type="text" id="contactPersonId" placeholder="Enter PersonId" />
               </div>
               <div className=" text-center">
-                <CButton type="submit" className="mb-3">
-                  Submit
-                </CButton>
+                <Link to="/forms/organization-table/">
+                  <CButton type="submit" className="mb-3 mx-5">
+                    Submit
+                  </CButton>
+                </Link>
+                <Link to="/forms/organization-table/">
+                  <CButton type="submit" className="mb-3 btn btn-danger">
+                    Cancel
+                  </CButton>
+                </Link>
               </div>
             </CForm>
           </CCardBody>

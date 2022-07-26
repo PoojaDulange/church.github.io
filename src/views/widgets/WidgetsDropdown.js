@@ -12,6 +12,7 @@ import { getStyle } from '@coreui/utils'
 import { CChartBar, CChartLine } from '@coreui/react-chartjs'
 import CIcon from '@coreui/icons-react'
 import { cilArrowBottom, cilArrowTop, cilOptions } from '@coreui/icons'
+import { Link } from 'react-router-dom'
 
 const WidgetsDropdown = () => {
   return (
@@ -19,9 +20,13 @@ const WidgetsDropdown = () => {
       <CCol sm={6} lg={3}>
         <CWidgetStatsA
           className="my-4"
-          color="primary"
+          color="secondary"
           value={<h4 className="my-3">#500</h4>}
-          title={<h4 className="my-3">Organization</h4>}
+          title={
+            <Link to="/forms/organization-table/">
+              <h4 className="my-3">Organization</h4>
+            </Link>
+          }
           // action={
           //   <CDropdown alignment="end">
           //     <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -101,7 +106,11 @@ const WidgetsDropdown = () => {
           className="my-4"
           color="info"
           value={<h4 className="my-3">#1500</h4>}
-          title={<h4 className="my-3">People</h4>}
+          title={
+            <Link to="/forms/people-table/">
+              <h4 className="my-3">Individual</h4>
+            </Link>
+          }
           // action={
           //   <CDropdown alignment="end">
           //     <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -180,7 +189,11 @@ const WidgetsDropdown = () => {
           className="my-4"
           color="warning"
           value={<h4 className="my-3">$2000</h4>}
-          title={<h4 className="my-3">Contribution</h4>}
+          title={
+            <Link to="/forms/contribution-table">
+              <h4 className="my-3">Contribution</h4>
+            </Link>
+          }
           // action={
           //   <CDropdown alignment="end">
           //     <CDropdownToggle color="transparent" caret={false} className="p-0">
@@ -246,7 +259,11 @@ const WidgetsDropdown = () => {
           className="my-4"
           color="danger"
           value={<h4 className="my-3">#3</h4>}
-          title={<h4 className="my-3">Pledged Categories</h4>}
+          title={
+            <Link to="/forms/pledged-category/">
+              <h4 className="my-3">Pledged Categories</h4>
+            </Link>
+          }
           // action={
           //   <CDropdown alignment="end">
           //     <CDropdownToggle color="transparent" caret={false} className="p-0">

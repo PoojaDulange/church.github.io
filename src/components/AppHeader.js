@@ -75,16 +75,16 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
         </CHeaderNav> */}
-        <CHeaderNav className="d-md-flex ms-auto" style={{ display: 'flex' }} justify-content-end>
+        {/* <CHeaderNav className="d-md-flex ms-auto" style={{ display: 'flex' }} justify-content-end>
           <div className="ms-auto">
             <AppHeaderDropdown />
           </div>
-        </CHeaderNav>
+        </CHeaderNav> */}
       </CContainer>
-      <CHeaderDivider />
-      <CContainer fluid>
+      {/* <CHeaderDivider /> */}
+      {/* <CContainer fluid>
         <AppBreadcrumb />
-      </CContainer>
+      </CContainer> */}
     </CHeader>
   )
 }

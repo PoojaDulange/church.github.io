@@ -16,6 +16,7 @@ import {
   CDropdownToggle,
   CFormCheck,
 } from '@coreui/react'
+import { Link } from 'react-router-dom'
 
 const Contribution = () => {
   return (
@@ -99,10 +100,14 @@ const Contribution = () => {
                 <CButton> Group 2 </CButton>
               </CButtonGroup> */}
               <div className="gap-4 d-md-flex justify-content-md-center">
-                <CButton color="primary" className="me-md-2">
-                  Submit
-                </CButton>
-                <CButton color="danger">Cancel</CButton>
+                <Link to="/forms/user-contribution-table/">
+                  <CButton color="primary" className="me-md-2">
+                    Submit
+                  </CButton>
+                </Link>
+                <Link to="/forms/user-contribution-table/">
+                  <CButton color="danger">Cancel</CButton>
+                </Link>
               </div>
             </CForm>
           </CCardBody>

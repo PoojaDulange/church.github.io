@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -58,12 +59,16 @@ const ChurchForm = () => {
                   <CFormInput type="text" id="churchUrl" placeholder="Enter Church URL" />
                 </div>
                 <div className="text-center">
-                  <CButton className="mx-5" color="primary">
-                    Submit
-                  </CButton>
-                  <CButton className="mx-5" color="danger">
-                    Cancel
-                  </CButton>
+                  <Link to="/forms/church-table">
+                    <CButton color="primary" className="mx-5">
+                      Submit
+                    </CButton>
+                  </Link>
+                  <Link to="/forms/church-table">
+                    <CButton color="danger" className="mx-5">
+                      Cancel
+                    </CButton>
+                  </Link>
                 </div>
               </CForm>
             </DocsExample>

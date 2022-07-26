@@ -19,7 +19,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Admin Dashboard',
-    to: '/dashboard',
+    to: '/dashboard1',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
@@ -27,12 +27,6 @@ const _nav = [
     name: 'Admin',
     icon: <i className="fa-solid fa-user-tie m-auto"></i>,
     items: [
-      {
-        component: CNavItem,
-        name: 'Report',
-        to: 'forms/report-form',
-        icon: <i className="fa-solid fa-file-lines mx-3"></i>,
-      },
       {
         component: CNavItem,
         name: 'Church Profile',
@@ -50,19 +44,19 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Organization',
-        to: 'forms/organization-form',
+        to: 'forms/organization-table',
         icon: <i className="fa-solid fa-building-columns mx-3"></i>,
       },
       {
         component: CNavItem,
-        name: 'People',
-        to: 'forms/form-control',
+        name: 'Individual',
+        to: 'forms/people-table',
         icon: <i className="fa-solid fa-user mx-3"></i>,
       },
       {
         component: CNavItem,
         name: 'Contribution',
-        to: 'forms/contribution-form',
+        to: 'forms/contribution-table',
         icon: <i className="fa-solid fa-money-check-dollar mx-3"></i>,
       },
       {
@@ -71,6 +65,7 @@ const _nav = [
         to: 'forms/pledged-category',
         icon: <i className="fa-solid fa-table-list mx-3"></i>,
       },
+
       // {
       //   component: CNavItem,
       //   name: 'Countries',
@@ -94,6 +89,12 @@ const _nav = [
       //   to: '/',
       // },
     ],
+  },
+  {
+    component: CNavItem,
+    name: 'LogOut',
+    to: '/',
+    icon: <i className="fa-solid fa-arrow-right-from-bracket mx-3"></i>,
   },
   //     {
   //       component: CNavItem,

@@ -24,10 +24,10 @@ import img from 'src/assets/images/user1.jpg'
 const UserProfile = () => {
   return (
     <div>
-      <CCard style={{ width: '100%', margin: 'auto', height: 'auto' }}>
+      <CCard style={{ width: '70%', margin: 'auto', height: 'auto' }}>
         <CCardImage
           className=" mt-3  mb-3 mx-auto"
-          style={{ height: 'auto', width: '100%' }}
+          style={{ height: '25%', width: '25%' }}
           src={img}
         />
         <CCardBody>

@@ -31,11 +31,22 @@ const Dropdowns = React.lazy(() => import('./views/buttons/dropdowns/Dropdowns')
 const ChecksRadios = React.lazy(() => import('./views/forms/checks-radios/ChecksRadios'))
 const FloatingLabels = React.lazy(() => import('./views/forms/floating-labels/FloatingLabels'))
 const FormControl = React.lazy(() => import('./views/forms/form-control/FormControl'))
+const PledgeAdd = React.lazy(() => import('./views/forms/pledge-add/PledgeAdd'))
 const ChurchForm = React.lazy(() => import('./views/forms/church-form/ChurchForm'))
 const PledgedCategory = React.lazy(() => import('./views/forms/pledged-category/PledgedCategory'))
 const ReportForm = React.lazy(() => import('./views/forms/report-form/ReportForm'))
 const ChurchProfile = React.lazy(() => import('./views/forms/church-profile/ChurchProfile'))
 const UserProfile = React.lazy(() => import('./views/forms/user-profile/UserProfile'))
+const ContributionTable = React.lazy(() =>
+  import('./views/forms/contribution-table/ContributionTable'),
+)
+const PeopleTable = React.lazy(() => import('./views/forms/people-table/PeopleTable'))
+const UserContributionTable = React.lazy(() =>
+  import('./views/forms/user-contribution-table/UserContributionTable'),
+)
+const OrganizationTable = React.lazy(() =>
+  import('./views/forms/organization-table/OrganizationTable'),
+)
 const UserReportForm = React.lazy(() => import('./views/forms/user-report-form/UserReportForm'))
 const ContributionForm = React.lazy(() =>
   import('./views/forms/contribution-form/ContributionForm'),
@@ -102,11 +113,20 @@ const routes = [
   { path: '/forms/user-report-form', name: 'UserReportForm', element: UserReportForm },
   { path: '/forms/contribution-form', name: 'Contribution Form', element: ContributionForm },
   { path: '/forms/church-table', name: 'Church Table', element: ChurchTable },
+  { path: '/forms/people-table', name: 'People Table', element: PeopleTable },
+  { path: '/forms/pledge-add', name: 'PledgeAdd', element: PledgeAdd },
+  { path: '/forms/organization-table', name: 'Organization Table', element: OrganizationTable },
   { path: '/forms/organization-form', name: 'Organization Form', element: OrganizationForm },
   { path: '/forms/select', name: 'Select', element: Select },
   { path: '/forms/checks-radios', name: 'Checks & Radios', element: ChecksRadios },
   { path: '/forms/range', name: 'Range', element: Range },
   { path: '/forms/input-group', name: 'Input Group', element: InputGroup },
+  { path: '/forms/contribution-table', name: 'ContributionTable', element: ContributionTable },
+  {
+    path: '/forms/user-contribution-table',
+    name: 'UserContributionTable',
+    element: UserContributionTable,
+  },
   { path: '/forms/floating-labels', name: 'Floating Labels', element: FloatingLabels },
   { path: '/forms/layout', name: 'Layout', element: Layout },
   { path: '/forms/validation', name: 'Validation', element: Validation },

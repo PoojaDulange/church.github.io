@@ -20,7 +20,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Super Admin Dashboard',
-    to: '/dashboard',
+    to: '/forms/church-table',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
@@ -30,17 +30,17 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Church',
-        to: 'forms/church-table',
-        icon: <i className="fa-solid fa-church mx-3"></i>,
-      },
-      {
-        component: CNavItem,
         name: 'Church Admin',
         to: 'forms/form-control',
         icon: <i className="fa-regular fa-rectangle-list mx-3"></i>,
       },
     ],
+  },
+  {
+    component: CNavItem,
+    name: 'LogOut',
+    to: '/',
+    icon: <i className="fa-solid fa-arrow-right-from-bracket mx-3"></i>,
   },
   // {
   //   component: CNavTitle,

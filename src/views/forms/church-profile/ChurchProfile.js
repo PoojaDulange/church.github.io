@@ -24,10 +24,11 @@ import {
 const ChurchProfile = () => {
   return (
     <div>
-      <CCard style={{ width: '100%', margin: 'auto', height: 'auto' }}>
+      <CCard style={{ width: '70%', margin: 'auto', height: 'auto' }}>
         <CCardImage
-          className=" mt-3  mb-3"
+          className="flex justify-content-center m-auto mt-4"
           src="https://images.unsplash.com/photo-1555696958-c5049b866f6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          style={{ width: '50%', height: '25%' }}
         />
         <CCardBody>
           <CCardTitle>Church Name</CCardTitle>
@@ -45,7 +46,10 @@ const ChurchProfile = () => {
             <CButton className="btn btn-warning">Edit</CButton>
           </Link>
           <span> </span>
-          <CButton className="btn btn-danger">Cancel</CButton>
+          <Link to="/forms/church-table/">
+            {' '}
+            <CButton className="btn btn-danger">Cancel</CButton>
+          </Link>
           {/* <CCardLink href="#">Another link</CCardLink> */}
         </CCardBody>
       </CCard>

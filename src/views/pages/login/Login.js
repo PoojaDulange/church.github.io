@@ -72,22 +72,22 @@ const Login = () => {
                     <CRow>
                       {console.log(user)}
                       <CCol xs={6}>
-                        {user == 'sadmin' && (
-                          <Link to="/dashboard">
+                        {user === 'sadmin' && (
+                          <Link to="/forms/church-table/">
                             <CButton color="primary" className="px-4">
                               Login
                             </CButton>
                           </Link>
                         )}
-                        {user == 'admin' && (
+                        {user === 'admin' && (
                           <Link to="/dashboard1">
                             <CButton color="primary" className="px-4">
                               Login
                             </CButton>
                           </Link>
                         )}
-                        {user == 'user' && (
-                          <Link to="/dashboard1">
+                        {user === 'user' && (
+                          <Link to="/forms/user-contribution-table/">
                             <CButton color="primary" className="px-4">
                               Login
                             </CButton>
