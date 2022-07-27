@@ -5,9 +5,7 @@ const AppFooter = () => {
   return (
     <CFooter>
       <div>
-        <a href="" target="_blank" rel="noopener noreferrer">
-          ChurchName
-        </a>
+        <a>ChurchName</a>
         <span className="ms-1">&copy; 2022</span>
       </div>
     </CFooter>

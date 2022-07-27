@@ -22,193 +22,198 @@ function PeopleTable() {
   const [filteredChurches, setFilteredChurches] = useState([])
   const data = [
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'john josef',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
+      city: 'Boston',
+      stateID: '12',
       zipCode: '413001',
-      telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      telNo: '217-514131',
+      mobileNo: '1234567892',
+      gender: 'Male/Female/Other',
+      email: 'abc@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'smith',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
-      telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      city: 'chicago',
+      stateID: '21',
+      zipCode: '413002',
+      telNo: '217-514131',
+      mobileNo: '1234567892',
+      gender: 'Male/Female/Other',
+      email: 'xyz@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'robert',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
-      telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      city: 'austin',
+      stateID: '13',
+      zipCode: '413003',
+      telNo: '217-514133',
+      mobileNo: '1234567892',
+      gender: 'Male/Female/Other',
+      email: 'pqr@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'john josef',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'hoston',
+      stateID: '31',
+      zipCode: '413003',
       telNo: '217-514132',
       mobileNo: '1234567891',
-      gender: 'F/M',
+      gender: 'Male/Female/Other',
+      email: 'uvw@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'wlliam',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'dallas',
+      stateID: '14',
+      zipCode: '413004',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567896',
+      gender: 'Male/Female/Other',
+      email: 'mno@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'john',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'chicago',
+      stateID: '41',
+      zipCode: '413005',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567893',
+      gender: 'Male/Female/Other',
+      email: 'pqr@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'sofia',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'miami',
+      stateID: '15',
+      zipCode: '413002',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567897',
+      gender: 'Male/Female/Other',
+      email: 'abc@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'john',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'miami',
+      stateID: '51',
+      zipCode: '413005',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567892',
+      gender: 'Male/Female/Other',
+      email: 'bce@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: ' josef',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
+      city: 'chicago',
+      stateID: '16',
       zipCode: '413001',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567898',
+      gender: 'Male/Female/Other',
+      email: 'abc@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'john',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
-      telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      city: 'boston',
+      stateID: '61',
+      zipCode: '413004',
+      telNo: '217-514131',
+      mobileNo: '1234567896',
+      gender: 'Male/Female/Other',
+      email: 'rou@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'amelia',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
+      city: 'boston',
+      stateID: '17',
       zipCode: '413001',
       telNo: '217-514132',
       mobileNo: '1234567891',
-      gender: 'F/M',
+      gender: 'Male/Female/Other',
+      email: 'yuw@gmail.com',
     },
     {
-      firstName: 'pqr',
-      middleName: 'xyz',
-      lastName: 'lmn',
+      name: 'amelia',
       address1: 'sgfghh',
       address2: 'sgfghh',
-      city: 'lmn',
-      zipCode: '413001',
+      city: 'chicago',
+      stateID: '71',
+      zipCode: '413006',
       telNo: '217-514132',
-      mobileNo: '1234567891',
-      gender: 'F/M',
+      mobileNo: '1234567898',
+      gender: 'Male/Female/Other',
+      email: 'xyz@gmail.com',
     },
   ]
+  const customStyles = {
+    headCells: {
+      style: { background: 'black', color: 'white' },
+    },
+  }
   const column = [
     {
-      name: 'People firstName',
-      selector: (row) => row.firstName,
+      name: <strong>Name</strong>,
+      selector: (row) => row.name,
     },
     {
-      name: 'People middleName',
-      selector: (row) => row.middleName,
-    },
-    {
-      name: 'People lastName',
-      selector: (row) => row.lastName,
-    },
-    {
-      name: 'People address1',
+      name: <strong>Address1</strong>,
       selector: (row) => row.address1,
     },
     {
-      name: 'People address2',
+      name: <strong>Address2</strong>,
       selector: (row) => row.address2,
     },
     {
-      name: 'People city',
+      name: <strong>City</strong>,
       selector: (row) => row.city,
     },
     {
-      name: 'People zipCode',
+      name: <strong>State</strong>,
+      selector: (row) => row.stateID,
+    },
+    {
+      name: <strong>ZipCode</strong>,
       selector: (row) => row.zipCode,
     },
     {
-      name: 'People telNo',
+      name: <strong>TelNo</strong>,
       selector: (row) => row.telNo,
     },
     {
-      name: 'People mobileNo',
+      name: <strong>Mobile</strong>,
       selector: (row) => row.mobileNo,
     },
     {
-      name: 'People gender',
+      name: <strong>Gender</strong>,
       selector: (row) => row.gender,
     },
     {
-      name: 'Action',
+      name: <strong>Email</strong>,
+      selector: (row) => row.email,
+    },
+    {
+      name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/form-control">
           <button className="btn btn-warning">Edit</button>
@@ -220,20 +225,20 @@ function PeopleTable() {
     setFilteredChurches(data)
 
     const result = data.filter((people) => {
-      return people.firstName.toLowerCase().match(search.toLowerCase())
+      return people.name.toLowerCase().match(search.toLowerCase())
     })
 
     setFilteredChurches(result)
   }, [search])
   return (
-    <div className="text-center ">
+    <div className="text-center">
       <CCard className="mt-3">
-        <CCardHeader>
-          <h3>Individual Table</h3>
+        <CCardHeader className="bg-dark">
+          <h3 className="text-white">Individual Table</h3>
         </CCardHeader>
         <CCardBody>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <CButton color="primary" onClick={window.print}>
+            <CButton onClick={Window.print} color="primary" on>
               Print
             </CButton>
 
@@ -251,6 +256,7 @@ function PeopleTable() {
             columns={column}
             data={filteredChurches}
             pagination
+            customStyles={customStyles}
             fixedHeader
             fixedHeaderScrollHeight="450px"
             selectableRows

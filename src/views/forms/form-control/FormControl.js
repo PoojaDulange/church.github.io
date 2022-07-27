@@ -13,7 +13,6 @@ import {
   CRow,
 } from '@coreui/react'
 import { DocsExample } from 'src/components'
-import { Link } from 'react-router-dom'
 
 const FormControl = () => {
   const user = localStorage.getItem('user')
@@ -43,27 +42,19 @@ const FormControl = () => {
                     <CFormInput type="text" id="lastName" placeholder="Enter Last Name" />
                   </div>
                   <div className="mb-3">
-                    <CFormLabel htmlFor="email">Email</CFormLabel>
-                    <CFormInput type="email" id="email" placeholder="Enter Email" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="password">Password</CFormLabel>
-                    <CFormInput type="password" id="password" placeholder="Enter Password" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="confirmPass">confirm Password</CFormLabel>
-                    <CFormInput
-                      type="text"
-                      id="confirmPass"
-                      placeholder="Enter Re-Enter Password"
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="address">Address</CFormLabel>
+                    <CFormLabel htmlFor="address">Address1</CFormLabel>
                     <CFormTextarea
                       id="address"
                       rows="3"
-                      placeholder="Enter Address"
+                      placeholder="Enter Address1"
+                    ></CFormTextarea>
+                  </div>
+                  <div className="mb-3">
+                    <CFormLabel htmlFor="address">Address2</CFormLabel>
+                    <CFormTextarea
+                      id="address"
+                      rows="3"
+                      placeholder="Enter Address2"
                     ></CFormTextarea>
                   </div>
                   <div className="mb-3">
@@ -71,73 +62,74 @@ const FormControl = () => {
                     <CFormInput type="text" id="city" placeholder="Enter city" />
                   </div>
                   <div className="mb-3">
+                    <CFormLabel htmlFor="state">StateID</CFormLabel>
+                    <CFormInput type="text" id="state" placeholder="Enter StateID" />
+                  </div>
+                  <div className="mb-3">
                     <CFormLabel htmlFor="zipcode">ZipCode</CFormLabel>
                     <CFormInput type="text" id="zipcode" placeholder="Enter Zipcode" />
                   </div>
                   <div className="mb-3">
-                    <CFormLabel htmlFor="tel">TelNo</CFormLabel>
+                    <CFormLabel htmlFor="tel">Tel No.</CFormLabel>
                     <CFormInput type="number" id="tel" placeholder="Enter Tel. No." />
                   </div>
                   <div className="mb-3">
-                    <CFormLabel htmlFor="mobile">Mobile</CFormLabel>
+                    <CFormLabel htmlFor="mobile">Mobile No.</CFormLabel>
                     <CFormInput type="text" id="mobile" placeholder="Enter Mobile No." />
                   </div>
-                  <div className="mb-3">
+                  {/* <div className="mb-3">
                     <CFormLabel>Gender:</CFormLabel>
                     <CRow>
                       <CCol>
                         <CFormCheck type="radio" id="male" label="Male" />
                         <CFormCheck type="radio" id="female" label="Female" />
+                        <CFormCheck type="radio" id="other" label="Other" />
                       </CCol>
                     </CRow>
+                  </div> */}
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                    />
+                    <label className="form-check-label" htmlFor="flexRadioDefault1">
+                      Male
+                    </label>
                   </div>
-                  {/* <div className="mb-3">
-                  <CFormLabel>IsChurchMemeber</CFormLabel>
-                  <CFormCheck type="check" id="yse" label="yse" />
-                  <CFormCheck type="check" id="no" label="No" />
-                </div> */}
-                  {user === 'sadmin' && (
-                    <div className="text-center">
-                      <Link to="/forms/church-table/">
-                        <CButton className="mx-5" color="primary">
-                          Submit
-                        </CButton>
-                      </Link>
-                      <Link to="/forms/church-table/">
-                        <CButton className="mx-5" color="danger">
-                          Cancel
-                        </CButton>
-                      </Link>
-                    </div>
-                  )}
-                  {user === 'admin' && (
-                    <div className="text-center">
-                      <Link to="/forms/people-table/">
-                        <CButton className="mx-5" color="primary">
-                          Submit
-                        </CButton>
-                      </Link>
-                      <Link to="/forms/people-table/">
-                        <CButton className="mx-5" color="danger">
-                          Cancel
-                        </CButton>
-                      </Link>
-                    </div>
-                  )}
-                  {user === 'user' && (
-                    <div className="text-center">
-                      <Link to="/forms/user-contribution-table/">
-                        <CButton className="mx-5" color="primary">
-                          Submit
-                        </CButton>
-                      </Link>
-                      <Link to="/forms/user-contribution-table/">
-                        <CButton className="mx-5" color="danger">
-                          Cancel
-                        </CButton>
-                      </Link>
-                    </div>
-                  )}
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label className="form-check-label" htmlFor="flexRadioDefault2">
+                      Female
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      checked
+                    />
+                    <label className="form-check-label" htmlFor="flexRadioDefault2">
+                      Other
+                    </label>
+                  </div>
+                  <div className="text-center">
+                    <CButton className="mx-5" color="primary">
+                      Submit
+                    </CButton>
+                    <CButton className="mx-5" color="danger">
+                      Cancel
+                    </CButton>
+                  </div>
                 </CForm>
               </DocsExample>
             </CCardBody>

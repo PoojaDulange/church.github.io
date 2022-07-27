@@ -31,6 +31,7 @@ const Dropdowns = React.lazy(() => import('./views/buttons/dropdowns/Dropdowns')
 const ChecksRadios = React.lazy(() => import('./views/forms/checks-radios/ChecksRadios'))
 const FloatingLabels = React.lazy(() => import('./views/forms/floating-labels/FloatingLabels'))
 const FormControl = React.lazy(() => import('./views/forms/form-control/FormControl'))
+const ChurchEdit = React.lazy(() => import('./views/forms/church-edit/ChurchEdit'))
 const PledgeAdd = React.lazy(() => import('./views/forms/pledge-add/PledgeAdd'))
 const ChurchForm = React.lazy(() => import('./views/forms/church-form/ChurchForm'))
 const PledgedCategory = React.lazy(() => import('./views/forms/pledged-category/PledgedCategory'))
@@ -109,6 +110,7 @@ const routes = [
   { path: '/forms/pledged-category', name: 'Pledged Category', element: PledgedCategory },
   { path: '/forms/report-form', name: 'ReportForm', element: ReportForm },
   { path: '/forms/church-profile', name: 'ChurchProfile', element: ChurchProfile },
+  { path: '/forms/church-edit', name: 'ChurchEdit', element: ChurchEdit },
   { path: '/forms/user-profile', name: 'UserProfile', element: UserProfile },
   { path: '/forms/user-report-form', name: 'UserReportForm', element: UserReportForm },
   { path: '/forms/contribution-form', name: 'Contribution Form', element: ContributionForm },

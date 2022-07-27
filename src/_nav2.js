@@ -20,7 +20,7 @@ var randomItem = array[Math.floor(Math.random() * array.length)]
 if (randomItem == 'o') {
   localStorage.setItem('name', 'Organization')
 } else {
-  localStorage.setItem('name', 'People')
+  localStorage.setItem('name', 'Individual')
 }
 const _nav = [
   {
@@ -53,12 +53,12 @@ const _nav = [
         to: 'forms/contribution-form',
         icon: <i className="fa-solid fa-money-check-dollar mx-3"></i>,
       },
-      {
-        component: CNavItem,
-        name: 'Pledged Category',
-        to: 'forms/pledged-category',
-        icon: <i className="fa-solid fa-table-list mx-3"></i>,
-      },
+      // {
+      //   component: CNavItem,
+      //   name: 'Pledged Category',
+      //   to: 'forms/pledged-category',
+      //   icon: <i className="fa-solid fa-table-list mx-3"></i>,
+      // },
     ],
   },
   {

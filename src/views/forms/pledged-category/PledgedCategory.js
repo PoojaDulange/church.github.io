@@ -21,17 +21,17 @@ const PledgedCategory = () => {
   ]
   const column = [
     {
-      name: 'Pledge Name',
+      name: <strong>Pledge Name</strong>,
       selector: (row) => row.name,
       sortable: true,
     },
     {
-      name: 'Description',
+      name: <strong>Description</strong>,
       selector: (row) => row.description,
     },
     {},
     {
-      name: 'Action',
+      name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/pledge-add/">
           <button className="btn btn-warning">Edit</button>
@@ -39,6 +39,11 @@ const PledgedCategory = () => {
       ),
     },
   ]
+  const customStyles = {
+    headCells: {
+      style: { background: 'black', color: 'white' },
+    },
+  }
   useEffect(() => {
     setFilteredChurches(data)
 
@@ -51,8 +56,8 @@ const PledgedCategory = () => {
   return (
     <div className="text-center">
       <CCard className="mt-2">
-        <CCardHeader>
-          <h3>Pledged Category</h3>
+        <CCardHeader className="bg-dark">
+          <h3 className="text-white">Pledged Category</h3>
         </CCardHeader>
         <CCardBody>
           <div className="d-md-flex">
@@ -77,6 +82,7 @@ const PledgedCategory = () => {
           <DataTable
             columns={column}
             data={filteredChurches}
+            customStyles={customStyles}
             pagination
             fixedHeader
             fixedHeaderScrollHeight="1000px"

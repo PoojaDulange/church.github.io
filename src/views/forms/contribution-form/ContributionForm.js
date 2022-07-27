@@ -37,16 +37,16 @@ const Contribution = () => {
               </div> */}
               <div className="mb-3">
                 <CFormLabel htmlFor="date">ContributionDate</CFormLabel>
-                <CFormInput type="date" id="date" placeholder="Enter Date" />
+                <CFormInput type="datetime-local" id="date" placeholder="Enter Date" />
               </div>
               <div className="mb-3">
                 <CFormLabel htmlFor="name">PledgeCategoryName</CFormLabel>
                 <CDropdown className="mx-3" id="name">
                   <CDropdownToggle color="secondary">PledgeCategory</CDropdownToggle>
                   <CDropdownMenu>
-                    <CDropdownItem href="#">Pledged</CDropdownItem>
-                    <CDropdownItem href="#">Non-Plegded</CDropdownItem>
-                    <CDropdownItem href="#">Memorial</CDropdownItem>
+                    <CDropdownItem href="#">Education</CDropdownItem>
+                    <CDropdownItem href="#">Food</CDropdownItem>
+                    <CDropdownItem href="#">Construction</CDropdownItem>
                   </CDropdownMenu>
                 </CDropdown>
               </div>
@@ -56,6 +56,10 @@ const Contribution = () => {
               <div className="mb-3">
                 <CFormLabel htmlFor="exampleFormControlTextarea1">Comments</CFormLabel>
                 <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
+              </div>
+              <div className="mb-3">
+                <CFormLabel htmlFor="amount">PlegdedAmount</CFormLabel>
+                <CFormInput type="number" id="amount" placeholder="Enter Pledged Amount" />
               </div>
               {/* <div>
                 <CFormLabel htmlFor="exampleFormControlInput1">Memorial </CFormLabel>

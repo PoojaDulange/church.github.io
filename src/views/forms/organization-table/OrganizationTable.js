@@ -9,182 +9,182 @@ const OrganizationTable = () => {
   const [filteredOrganization, setFilteredOrganization] = useState([])
   const data = [
     {
-      name: 'Kiva',
-      address1: 'pqr',
+      name: 'World Team',
+      address1: 'Bridgeport',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
       email: 'abc@gmail.com',
-      contactPersonId: '54',
+      enrolledon: '03-12-2019',
     },
     {
-      name: 'Americorps',
+      name: 'Teen Missions International',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
       email: 'abc@gmail.com',
-      contactPersonId: '54',
+      enrolledon: '03-02-2019',
     },
     {
-      name: 'Water',
+      name: 'Jeff Cherubin Domond Foundation',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
       email: 'abc@gmail.com',
-      contactPersonId: '54',
+      enrolledon: '01-12-2020',
     },
     {
-      name: 'pqr',
+      name: 'Homeaid',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
       email: 'abc@gmail.com',
-      contactPersonId: '54',
+      enrolledon: '08-01-2019',
     },
     {
-      name: 'kl',
+      name: 'Paralyzed Veterans Of America',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
       email: 'abc@gmail.com',
-      contactPersonId: '54',
+      enrolledon: '08-12-2018',
     },
     {
-      name: 'data',
+      name: 'Wbenc',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'Wbenc@gmail.com',
+      enrolledon: '03-23-2019',
     },
     {
-      name: 'lmn',
+      name: 'The First Tee',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'First@gmail.com',
+      enrolledon: '03-13-2017',
     },
     {
-      name: 'skik',
+      name: 'Freefrom',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'Freefrom@gmail.com',
+      enrolledon: '04-30-2017',
     },
     {
-      name: 'ouiiuo',
+      name: 'Eac Network',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'Network@gmail.com',
+      enrolledon: '03-12-2019',
     },
     {
-      name: 'sposi',
+      name: 'Artsquest',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'Artsquest@gmail.com',
+      enrolledon: '01-12-2018',
     },
     {
-      name: 'oiu',
+      name: 'Foodcorps',
       address1: 'pqr',
       address2: 'Guest',
       stateID: 'ssd',
-      cityID: 'lmn',
+      city: 'lmn',
       zipcode: '12524',
       telno: '5748586965',
       mobno: '6654685654',
-      email: 'abc@gmail.com',
-      contactPersonId: '54',
+      email: 'Foodcorps@gmail.com',
+      enrolledon: '10-12-2018',
     },
   ]
   const column = [
     {
-      name: 'Organization Name',
+      name: <strong>Name</strong>,
       selector: (row) => row.name,
       sortable: true,
     },
     {
-      name: 'Address 1',
+      name: <strong>Address1</strong>,
       selector: (row) => row.address1,
     },
     {
-      name: 'Address 2',
+      name: <strong>Address2</strong>,
       selector: (row) => row.address2,
     },
     {
-      name: 'State',
+      name: <strong>State</strong>,
       selector: (row) => row.stateID,
     },
     {
-      name: 'City',
-      selector: (row) => row.cityID,
+      name: <strong>City</strong>,
+      selector: (row) => row.city,
     },
     {
-      name: 'Zipcode',
+      name: <strong>ZipCode</strong>,
       selector: (row) => row.zipcode,
     },
     {
-      name: 'Telephone Number',
+      name: <strong>TelNo</strong>,
       selector: (row) => row.telno,
     },
     {
-      name: 'Mobile Number',
+      name: <strong>Mobile</strong>,
       selector: (row) => row.mobno,
     },
     {
-      name: 'Email Address',
+      name: <strong>Email</strong>,
       selector: (row) => row.email,
     },
     {
-      name: 'Contact PersonID Number',
-      selector: (row) => row.contactPersonId,
+      name: <strong>EnrolledOn</strong>,
+      selector: (row) => row.enrolledon,
     },
     {
-      name: 'Action',
+      name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/organization-form/">
           <button className="btn btn-warning">Edit</button>
@@ -201,9 +201,14 @@ const OrganizationTable = () => {
 
     setFilteredOrganization(result)
   }, [search])
+  const customStyles = {
+    headCells: {
+      style: { background: 'black', color: 'white' },
+    },
+  }
   return (
     <div className="text-center">
-      <CCard className="mt-5">
+      <CCard className="mt-3">
         <CCardHeader className="bg-dark">
           <h3 className="text-white">Organization Table</h3>
         </CCardHeader>
@@ -230,6 +235,7 @@ const OrganizationTable = () => {
             columns={column}
             data={filteredOrganization}
             pagination
+            customStyles={customStyles}
             fixedHeader
             fixedHeaderScrollHeight="450px"
             selectableRows

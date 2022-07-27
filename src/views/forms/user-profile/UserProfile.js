@@ -22,6 +22,7 @@ import {
 import img from 'src/assets/images/user1.jpg'
 
 const UserProfile = () => {
+  const user = localStorage.getItem('name')
   return (
     <div>
       <CCard style={{ width: '70%', margin: 'auto', height: 'auto' }}>
@@ -45,9 +46,16 @@ const UserProfile = () => {
         </CListGroup>
 
         <CCardBody>
-          <Link to="/forms/form-control">
-            <CButton className="btn btn-warning">Edit</CButton>
-          </Link>
+          {user === 'Individual' && (
+            <Link to="/forms/form-control">
+              <CButton className="btn btn-warning">Edit</CButton>
+            </Link>
+          )}
+          {user === 'Organization' && (
+            <Link to="/forms/organization-form">
+              <CButton className="btn btn-warning">Edit</CButton>
+            </Link>
+          )}
           <span> </span>
           <CButton className="btn btn-danger">Cancel</CButton>
           {/* <CCardLink href="#">Another link</CCardLink> */}

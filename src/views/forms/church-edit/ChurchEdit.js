@@ -21,7 +21,7 @@ const ChurchForm = () => {
       <CCol xs={12}>
         <CCard className="mb-4 col-8 m-auto">
           <CCardHeader className="text-center">
-            <strong>Church</strong>
+            <strong> Edit Church</strong>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="forms/form-control">
@@ -61,10 +61,6 @@ const ChurchForm = () => {
                 <div className="mb-3">
                   <CFormLabel htmlFor="number">Mobile No.</CFormLabel>
                   <CFormInput type="number" id="number" placeholder="Enter Mobile No." />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="email">Email</CFormLabel>
-                  <CFormInput type="text" id="email" placeholder="Enter Church Email" />
                 </div>
                 <div className="mb-3">
                   <CFormLabel htmlFor="churchUrl">Church URL</CFormLabel>

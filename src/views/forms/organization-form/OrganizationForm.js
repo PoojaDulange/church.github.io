@@ -10,9 +10,8 @@ import {
   CFormInput,
   CButton,
 } from '@coreui/react'
-import { Link } from 'react-router-dom'
 
-const organization = () => {
+const organizationForm = () => {
   return (
     <CRow>
       <CCol xs={12}>
@@ -35,8 +34,12 @@ const organization = () => {
                 <CFormInput type="text" id="address2" placeholder="Enter Address2" />
               </div>
               <div className="mb-3">
-                <CFormLabel htmlFor="cityID">CityID</CFormLabel>
-                <CFormInput type="text" id="cityID" placeholder="Enter City Id" />
+                <CFormLabel htmlFor="cityID">StateID</CFormLabel>
+                <CFormInput type="text" id="StateID" placeholder="Enter State Id" />
+              </div>
+              <div className="mb-3">
+                <CFormLabel htmlFor="cityID">City</CFormLabel>
+                <CFormInput type="text" id="city" placeholder="Enter City" />
               </div>
               <div className="mb-3">
                 <CFormLabel htmlFor="zipcode">ZipCode</CFormLabel>
@@ -51,24 +54,13 @@ const organization = () => {
                 <CFormInput type="number" id="mobno" placeholder="Enter Mobile No" />
               </div>
               <div className="mb-3">
-                <CFormLabel htmlFor="email">Email Address</CFormLabel>
-                <CFormInput type="text" id="email" placeholder="Enter Email" />
-              </div>
-              <div className="mb-3">
-                <CFormLabel htmlFor="contactPersonId">Contact Person ID</CFormLabel>
-                <CFormInput type="text" id="contactPersonId" placeholder="Enter PersonId" />
+                <CFormLabel htmlFor="enrolledon">Enrolled On</CFormLabel>
+                <CFormInput type="date" id="enrolledon" />
               </div>
               <div className=" text-center">
-                <Link to="/forms/organization-table/">
-                  <CButton type="submit" className="mb-3 mx-5">
-                    Submit
-                  </CButton>
-                </Link>
-                <Link to="/forms/organization-table/">
-                  <CButton type="submit" className="mb-3 btn btn-danger">
-                    Cancel
-                  </CButton>
-                </Link>
+                <CButton type="submit" className="mb-3">
+                  Submit
+                </CButton>
               </div>
             </CForm>
           </CCardBody>
@@ -78,4 +70,4 @@ const organization = () => {
   )
 }
 
-export default organization
+export default organizationForm
