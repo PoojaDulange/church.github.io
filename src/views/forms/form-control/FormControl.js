@@ -13,6 +13,7 @@ import {
   CRow,
 } from '@coreui/react'
 import { DocsExample } from 'src/components'
+import { Link } from 'react-router-dom'
 
 const FormControl = () => {
   const user = localStorage.getItem('user')
@@ -122,14 +123,36 @@ const FormControl = () => {
                       Other
                     </label>
                   </div>
-                  <div className="text-center">
-                    <CButton className="mx-5" color="primary">
-                      Submit
-                    </CButton>
-                    <CButton className="mx-5" color="danger">
-                      Cancel
-                    </CButton>
-                  </div>
+                  {user === 'sadmin' && (
+                    <div className="text-center">
+                      <Link to="/forms/church-table/">
+                        <CButton className="btn btn-primary">Submit</CButton>
+                      </Link>
+                      <Link to="/forms/church-table/">
+                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                      </Link>
+                    </div>
+                  )}
+                  {user === 'admin' && (
+                    <div className="text-center">
+                      <Link to="/">
+                        <CButton className="btn btn-primary">Submit</CButton>
+                      </Link>
+                      <Link to="/">
+                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                      </Link>
+                    </div>
+                  )}
+                  {user === 'user' && (
+                    <div className="text-center">
+                      <Link to="/forms/people-table/">
+                        <CButton className="btn btn-primary">Submit</CButton>
+                      </Link>
+                      <Link to="/forms/people-table/">
+                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                      </Link>
+                    </div>
+                  )}
                 </CForm>
               </DocsExample>
             </CCardBody>
