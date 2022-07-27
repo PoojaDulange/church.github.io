@@ -135,10 +135,10 @@ const FormControl = () => {
                   )}
                   {user === 'admin' && (
                     <div className="text-center">
-                      <Link to="/">
+                      <Link to="/forms/people-table/">
                         <CButton className="btn btn-primary">Submit</CButton>
                       </Link>
-                      <Link to="/">
+                      <Link to="/forms/people-table/">
                         <CButton className="btn btn-danger mx-3">Cancel</CButton>
                       </Link>
                     </div>
