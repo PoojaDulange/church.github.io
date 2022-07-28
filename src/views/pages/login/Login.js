@@ -15,7 +15,7 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilUser, cilEmail } from '@coreui/icons'
 import image from '../../../assets/images/Login.png'
 import ChecksRadios from '../../forms/checks-radios/ChecksRadios.js'
 import Dashboard from 'src/views/dashboard/Dashboard'
@@ -54,9 +54,7 @@ const Login = () => {
                     <ChecksRadios onChange={handleChange} />
                     <p className="text-medium-emphasis">Sign In to your account</p>
                     <CInputGroup className="mb-3">
-                      <CInputGroupText>
-                        <CIcon icon={cilUser} />
-                      </CInputGroupText>
+                      <CInputGroupText>@</CInputGroupText>
                       <CFormInput placeholder="Email" autoComplete="username" />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
@@ -96,14 +94,16 @@ const Login = () => {
                         {/* </UserContext.Provider> */}
                       </CCol>
                       <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton>
+                        <Link to="/forgotpassword" style={{ textDecoration: 'none' }}>
+                          <CButton color="link" className="px-0 text-decoration-none">
+                            Forgot password?
+                          </CButton>
+                        </Link>
                       </CCol>
                       <CCol>
                         <p className="py-5">
                           New User?
-                          <Link to="/register" style={{ textDecoration: 'none' }}>
+                          <Link to="/register" className="text-decoration-none">
                             {' '}
                             Register
                           </Link>
@@ -123,7 +123,7 @@ const Login = () => {
                   justify-content-center
                 >
                   <div className="m-auto">
-                    <img style={{ width: '100%', height: 'auto' }} src={image} alt="Image"></img>
+                    <img className="w-100" src={image} alt="Image" />
                   </div>
                 </CCardBody>
               </CCard>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import ExcelJS from 'exceljs'
 import {
   CButton,
   CCard,
@@ -22,146 +23,134 @@ function PeopleTable() {
   const [filteredChurches, setFilteredChurches] = useState([])
   const data = [
     {
-      name: 'john josef',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'Boston',
-      stateID: '12',
-      zipCode: '413001',
+      name: 'John josef',
+      address1: 'North Kierland',
+      city: 'BScottsdale',
+      stateID: 'AZ',
+      zipCode: '85254',
       telNo: '217-514131',
-      mobileNo: '1234567892',
+      mobileNo: '123-456-7892',
       gender: 'Male/Female/Other',
       email: 'abc@gmail.com',
     },
     {
-      name: 'smith',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'chicago',
-      stateID: '21',
-      zipCode: '413002',
+      name: 'Smith',
+      address1: 'Avocado Ave',
+      city: 'Newport Beach',
+      stateID: 'CA',
+      zipCode: '92660',
       telNo: '217-514131',
-      mobileNo: '1234567892',
+      mobileNo: '123-456-7892',
       gender: 'Male/Female/Other',
       email: 'xyz@gmail.com',
     },
     {
-      name: 'robert',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'austin',
-      stateID: '13',
-      zipCode: '413003',
+      name: 'Robert',
+      address1: 'Buena Vista',
+      city: 'Lake Buena',
+      stateID: 'FL',
+      zipCode: '32830',
       telNo: '217-514133',
-      mobileNo: '1234567892',
+      mobileNo: '123-456-7892',
       gender: 'Male/Female/Other',
       email: 'pqr@gmail.com',
     },
     {
-      name: 'john josef',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'hoston',
-      stateID: '31',
-      zipCode: '413003',
+      name: 'John josef',
+      address1: 'Mauna Lani',
+      city: 'Kohala Coast',
+      stateID: 'HI',
+      zipCode: '96743',
       telNo: '217-514132',
-      mobileNo: '1234567891',
+      mobileNo: '123-456-7891',
       gender: 'Male/Female/Other',
       email: 'uvw@gmail.com',
     },
     {
-      name: 'wlliam',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'dallas',
-      stateID: '14',
-      zipCode: '413004',
+      name: 'Wlliam',
+      address1: "Kukui'ula Village",
+      city: 'Koloa',
+      stateID: 'HI',
+      zipCode: '96756',
       telNo: '217-514132',
-      mobileNo: '1234567896',
+      mobileNo: '123-456-7896',
       gender: 'Male/Female/Other',
       email: 'mno@gmail.com',
     },
     {
-      name: 'john',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'chicago',
-      stateID: '41',
-      zipCode: '413005',
+      name: 'John',
+      address1: 'Beachwalk',
+      city: 'Honololu',
+      stateID: 'Hi',
+      zipCode: '96815',
       telNo: '217-514132',
-      mobileNo: '1234567893',
+      mobileNo: '123-456-7893',
       gender: 'Male/Female/Other',
       email: 'pqr@gmail.com',
     },
     {
-      name: 'sofia',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'miami',
-      stateID: '15',
-      zipCode: '413002',
+      name: 'Sofia',
+      address1: 'Waikoloa Beach',
+      city: 'Waikoloa',
+      stateID: 'Hi',
+      zipCode: '96738',
       telNo: '217-514132',
-      mobileNo: '1234567897',
+      mobileNo: '123-456-7897',
       gender: 'Male/Female/Other',
       email: 'abc@gmail.com',
     },
     {
-      name: 'john',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'miami',
-      stateID: '51',
-      zipCode: '413005',
+      name: 'John',
+      address1: 'Wailea Drive',
+      city: 'Kihei',
+      stateID: 'HI',
+      zipCode: '96753',
       telNo: '217-514132',
-      mobileNo: '1234567892',
+      mobileNo: '123-456-7892',
       gender: 'Male/Female/Other',
       email: 'bce@gmail.com',
     },
     {
-      name: ' josef',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'chicago',
-      stateID: '16',
-      zipCode: '413001',
+      name: ' Josef',
+      address1: 'BelleVue Square',
+      city: 'BelleVue',
+      stateID: 'WA',
+      zipCode: '98004',
       telNo: '217-514132',
-      mobileNo: '1234567898',
+      mobileNo: '123-456-7898',
       gender: 'Male/Female/Other',
       email: 'abc@gmail.com',
     },
     {
-      name: 'john',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'boston',
-      stateID: '61',
-      zipCode: '413004',
+      name: 'John',
+      address1: 'North Kierland',
+      city: 'BScottsdale',
+      stateID: 'AZ',
+      zipCode: '85254',
       telNo: '217-514131',
-      mobileNo: '1234567896',
+      mobileNo: '123-456-7896',
       gender: 'Male/Female/Other',
       email: 'rou@gmail.com',
     },
     {
-      name: 'amelia',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'boston',
-      stateID: '17',
-      zipCode: '413001',
+      name: 'Amelia',
+      address1: 'BelleVue Square',
+      city: 'BelleVue',
+      stateID: 'WA',
+      zipCode: '98004',
       telNo: '217-514132',
-      mobileNo: '1234567891',
+      mobileNo: '123-456-7891',
       gender: 'Male/Female/Other',
       email: 'yuw@gmail.com',
     },
     {
-      name: 'amelia',
-      address1: 'sgfghh',
-      address2: 'sgfghh',
-      city: 'chicago',
-      stateID: '71',
-      zipCode: '413006',
+      name: 'Amelia',
+      address1: 'Wailea Drive',
+      city: 'Kihei',
+      stateID: 'HI',
+      zipCode: '96753',
       telNo: '217-514132',
-      mobileNo: '1234567898',
+      mobileNo: '123-456-7898',
       gender: 'Male/Female/Other',
       email: 'xyz@gmail.com',
     },
@@ -169,6 +158,9 @@ function PeopleTable() {
   const customStyles = {
     headCells: {
       style: { background: 'black', color: 'white' },
+    },
+    rows: {
+      style: { marginTop: '10px', width: '100%' },
     },
   }
   const column = [
@@ -180,10 +172,7 @@ function PeopleTable() {
       name: <strong>Address1</strong>,
       selector: (row) => row.address1,
     },
-    {
-      name: <strong>Address2</strong>,
-      selector: (row) => row.address2,
-    },
+
     {
       name: <strong>City</strong>,
       selector: (row) => row.city,
@@ -210,13 +199,14 @@ function PeopleTable() {
     },
     {
       name: <strong>Email</strong>,
-      selector: (row) => row.email,
+
+      selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
     },
     {
       name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/form-control">
-          <button className="btn btn-warning">Edit</button>
+          <button className="btn btn-primary">Edit</button>
         </Link>
       ),
     },
@@ -230,6 +220,42 @@ function PeopleTable() {
 
     setFilteredChurches(result)
   }, [search])
+  const exportData = () => {
+    const fileName = 'simple.xlsx'
+    const workbook = new ExcelJS.Workbook()
+    const sheet = workbook.addWorksheet('my sheet')
+    sheet.columns = [
+      //   { header: "id", key: "id", width: 10 },
+      { header: 'name', key: 'name', with: 32 },
+      { header: 'description', key: 'description', width: 32 },
+      { header: 'address1', key: 'address1', width: 32 },
+      { header: 'city', key: 'city', width: 32 },
+      { header: 'state', key: 'stateId', width: 32 },
+      { header: 'zipcode', key: 'zipcode', width: 32 },
+      { header: 'mobile', key: 'mobile', width: 32 },
+      { header: 'email', key: 'email', width: 32 },
+      { header: 'url', key: 'url', width: 32 },
+    ]
+    sheet.addRow({
+      name: data.name,
+      description: data.description,
+      address1: data.address1,
+      city: data.city,
+      state: data.state,
+      zipcode: data.zipcode,
+      mobile: data.mobile,
+      email: data.email,
+      url: data.url,
+    })
+    workbook.xlsx
+      .writeBuffer(fileName)
+      .then(() => {
+        console.log('file created')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
   return (
     <div className="text-center">
       <CCard className="mt-3">
@@ -238,11 +264,17 @@ function PeopleTable() {
         </CCardHeader>
         <CCardBody>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <CButton onClick={Window.print} color="primary" on>
-              Print
-            </CButton>
-
-            <div className="ms-auto">
+            <Link to="">
+              <CButton color="primary" onClick={window.print}>
+                Print
+              </CButton>
+            </Link>
+            <Link to="">
+              <CButton color="primary" onClick={exportData}>
+                Export
+              </CButton>
+            </Link>
+            <div className="ms-auto mb-3">
               <input
                 type="text"
                 placeholder="Search Here"
@@ -258,12 +290,12 @@ function PeopleTable() {
             pagination
             customStyles={customStyles}
             fixedHeader
-            fixedHeaderScrollHeight="450px"
+            // fixedHeaderScrollHeight="450px"
             selectableRows
             selectableRowsHighlight
             highlightOnHover
             //actions={<button className="btn btn-primary">Export</button>}
-            subHeader
+            //subHeader
             /* subHeaderComponent={
               <input
                 type="text"

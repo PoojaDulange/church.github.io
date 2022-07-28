@@ -7,6 +7,8 @@ import {
   CCol,
   CForm,
   CFormInput,
+  CInputGroup,
+  CInputGroupText,
   CFormLabel,
   CFormTextarea,
   CRow,
@@ -16,6 +18,9 @@ import {
   CDropdownToggle,
   CFormCheck,
 } from '@coreui/react'
+import CIcon from '@coreui/icons-react'
+import { cilCircle, cilList, cilCalendar, cilMoney } from '@coreui/icons'
+
 import { Link } from 'react-router-dom'
 
 const Contribution = () => {
@@ -35,32 +40,52 @@ const Contribution = () => {
                 <CFormLabel htmlFor="id">UserID</CFormLabel>
                 <CFormInput type="number" id="id" placeholder="enter your id" />
               </div> */}
-              <div className="mb-3">
-                <CFormLabel htmlFor="date">ContributionDate</CFormLabel>
+              <CFormLabel htmlFor="date">
+                ContributionDate<span style={{ color: 'red' }}>*</span>
+              </CFormLabel>
+              <CInputGroup className="mb-3">
+                <CInputGroupText>
+                  <CIcon icon={cilCalendar} />
+                </CInputGroupText>
                 <CFormInput type="datetime-local" id="date" placeholder="Enter Date" />
-              </div>
-              <div className="mb-3">
-                <CFormLabel htmlFor="name">PledgeCategoryName</CFormLabel>
-                <CDropdown className="mx-3" id="name">
-                  <CDropdownToggle color="secondary">PledgeCategory</CDropdownToggle>
-                  <CDropdownMenu>
-                    <CDropdownItem href="#">Education</CDropdownItem>
-                    <CDropdownItem href="#">Food</CDropdownItem>
-                    <CDropdownItem href="#">Construction</CDropdownItem>
-                  </CDropdownMenu>
-                </CDropdown>
-              </div>
+              </CInputGroup>
+              <CFormLabel htmlFor="name">
+                PledgeCategoryName<span style={{ color: 'red' }}>*</span>
+              </CFormLabel>
+              <CInputGroup className="mb-3">
+                <CInputGroupText>
+                  <CIcon icon={cilList} />
+                </CInputGroupText>
+                <select className="form-select" aria-label="Default select example">
+                  <option value="1">Education</option>
+                  <option value="2">Construction</option>
+                  <option value="3">Food</option>
+                </select>
+              </CInputGroup>
+
               {/* <div className="mb-3">
                 <CFormInput type="text" id="name" placeholder="Enter Church Name" />
               </div> */}
-              <div className="mb-3">
-                <CFormLabel htmlFor="exampleFormControlTextarea1">Comments</CFormLabel>
+              <CFormLabel htmlFor="exampleFormControlTextarea1">
+                Comments <span style={{ color: 'red' }}>*</span>
+              </CFormLabel>
+              <CInputGroup className="mb-3">
+                <CInputGroupText>
+                  <CIcon icon={cilList} />
+                </CInputGroupText>
+
                 <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
-              </div>
-              <div className="mb-3">
-                <CFormLabel htmlFor="amount">PlegdedAmount</CFormLabel>
+              </CInputGroup>
+              <CFormLabel htmlFor="amount">
+                PlegdedAmount<span style={{ color: 'red' }}>*</span>
+              </CFormLabel>
+              <CInputGroup className="mb-3">
+                <CInputGroupText>
+                  <CIcon icon={cilMoney} />
+                </CInputGroupText>
+
                 <CFormInput type="number" id="amount" placeholder="Enter Pledged Amount" />
-              </div>
+              </CInputGroup>
               {/* <div>
                 <CFormLabel htmlFor="exampleFormControlInput1">Memorial </CFormLabel>
                 <CFormCheck
@@ -103,14 +128,12 @@ const Contribution = () => {
                 <CButton className="m-auto"> Group 1 </CButton>
                 <CButton> Group 2 </CButton>
               </CButtonGroup> */}
-              <div className="gap-4 d-md-flex justify-content-md-center">
+              <div className="gap-2 d-md-flex justify-content-md-center">
                 <Link to="/forms/user-contribution-table/">
-                  <CButton color="primary" className="me-md-2">
-                    Submit
-                  </CButton>
+                  <CButton>Submit</CButton>
                 </Link>
                 <Link to="/forms/user-contribution-table/">
-                  <CButton color="danger">Cancel</CButton>
+                  <CButton>Cancel</CButton>
                 </Link>
               </div>
             </CForm>

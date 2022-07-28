@@ -15,7 +15,15 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser, cilLocationPin, cilCircle, cilPhone } from '@coreui/icons'
+import {
+  cilLockLocked,
+  cilUser,
+  cilLocationPin,
+  cilCircle,
+  cilPhone,
+  cilMobile,
+  cilPin,
+} from '@coreui/icons'
 import { Link } from 'react-router-dom'
 import Carousels from '../../../views/base/carousels/Carousels.js'
 
@@ -104,7 +112,7 @@ const Register = () => {
                       </CInputGroup>
                       <CInputGroup className="mb-3">
                         <CInputGroupText>
-                          <CIcon icon={cilCircle} />
+                          <CIcon icon={cilPin} />
                         </CInputGroupText>
                         <CFormInput placeholder="Zipcode" />
                       </CInputGroup>
@@ -116,7 +124,7 @@ const Register = () => {
                       </CInputGroup>
                       <CInputGroup className="mb-3">
                         <CInputGroupText>
-                          <CIcon icon={cilPhone} />
+                          <CIcon icon={cilMobile} />
                         </CInputGroupText>
                         <CFormInput placeholder="Mobile Number" />
                       </CInputGroup>
@@ -145,7 +153,7 @@ const Register = () => {
                       </div>
                       <p className="py-5">
                         Already have an account?
-                        <Link to="/" style={{ textDecoration: 'none' }}>
+                        <Link to="/" className="text-decoration-none">
                           Login
                         </Link>
                       </p>
@@ -204,7 +212,7 @@ const Register = () => {
                       </CInputGroup>
                       <CInputGroup className="mb-3">
                         <CInputGroupText>
-                          <CIcon icon={cilCircle} />
+                          <CIcon icon={cilPin} />
                         </CInputGroupText>
                         <CFormInput placeholder="Zipcode" />
                       </CInputGroup>
@@ -216,13 +224,13 @@ const Register = () => {
                       </CInputGroup>
                       <CInputGroup className="mb-3">
                         <CInputGroupText>
-                          <CIcon icon={cilPhone} />
+                          <CIcon icon={cilMobile} />
                         </CInputGroupText>
                         <CFormInput placeholder="Mobile Number" />
                       </CInputGroup>
                       <CInputGroup className="mb-3">
                         <CInputGroupText>
-                          <CIcon icon={cilCircle} />
+                          <CIcon icon={cilUser} />
                         </CInputGroupText>
                         <CFormInput placeholder="Gender" />
                       </CInputGroup>
@@ -246,12 +254,14 @@ const Register = () => {
                           autoComplete="new-password"
                         />
                       </CInputGroup>
-                      <div className="d-grid">
-                        <CButton color="primary">Create Account</CButton>
+                      <div className="d-grid d-md-flex justify-content-md-center">
+                        <Link to="/">
+                          <CButton color="primary">Create Account</CButton>
+                        </Link>
                       </div>
                       <p className="py-5">
                         Already have an account?
-                        <Link to="/" style={{ textDecoration: 'none' }}>
+                        <Link to="/" className="text-decoration-none">
                           Login
                         </Link>
                       </p>

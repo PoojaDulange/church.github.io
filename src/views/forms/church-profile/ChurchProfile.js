@@ -35,21 +35,29 @@ const ChurchProfile = () => {
           <CCardText>Church description goes here as a full of para</CCardText>
         </CCardBody>
         <CListGroup flush>
-          <CListGroupItem>Address 2</CListGroupItem>
+          <CListGroupItem>Church Name</CListGroupItem>
+          <CListGroupItem>Description</CListGroupItem>
+          <CListGroupItem>Address1</CListGroupItem>
+          <CListGroupItem>Address2</CListGroupItem>
           <CListGroupItem>City</CListGroupItem>
-          <CListGroupItem>Pincode</CListGroupItem>
-          <CListGroupItem>URL</CListGroupItem>
+          <CListGroupItem>State</CListGroupItem>
+          <CListGroupItem>ZipCode</CListGroupItem>
+          <CListGroupItem>MobileNo</CListGroupItem>
+          <CListGroupItem>Email</CListGroupItem>
+          <CListGroupItem>Church URL</CListGroupItem>
         </CListGroup>
 
         <CCardBody>
-          <Link to="/forms/church-form">
-            <CButton className="btn btn-warning">Edit</CButton>
-          </Link>
-          <span> </span>
-          <Link to="/forms/church-table/">
-            {' '}
-            <CButton className="btn btn-danger">Cancel</CButton>
-          </Link>
+          <div className="gap-1 d-md-flex justify-content-md-center">
+            <Link to="/forms/church-edit">
+              <CButton className="btn btn-primary ">Edit</CButton>
+            </Link>
+            <span> </span>
+            <Link to="/dashboard1">
+              {' '}
+              <CButton className="btn btn-primary">Cancel</CButton>
+            </Link>
+          </div>
           {/* <CCardLink href="#">Another link</CCardLink> */}
         </CCardBody>
       </CCard>

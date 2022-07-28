@@ -36,28 +36,32 @@ const UserProfile = () => {
           {/* <CCardText>Church description goes here as a full of para</CCardText> */}
         </CCardBody>
         <CListGroup flush>
+          <CListGroupItem>Email</CListGroupItem>
           <CListGroupItem>Address 1</CListGroupItem>
           <CListGroupItem>Address 2</CListGroupItem>
           <CListGroupItem>City</CListGroupItem>
-          <CListGroupItem>Pincode</CListGroupItem>
-          <CListGroupItem>Email</CListGroupItem>
+          <CListGroupItem>State</CListGroupItem>
+          <CListGroupItem>Zipcode</CListGroupItem>
           <CListGroupItem>Tel No</CListGroupItem>
           <CListGroupItem>Mobile</CListGroupItem>
+          <CListGroupItem>Gender</CListGroupItem>
         </CListGroup>
 
-        <CCardBody>
+        <CCardBody className="gap-1 d-md-flex justify-content-md-center">
           {user === 'Individual' && (
             <Link to="/forms/form-control">
-              <CButton className="btn btn-warning">Edit</CButton>
+              <CButton className="btn btn-primary">Edit</CButton>
             </Link>
           )}
           {user === 'Organization' && (
             <Link to="/forms/organization-form">
-              <CButton className="btn btn-warning">Edit</CButton>
+              <CButton className="btn btn-primary">Edit</CButton>
             </Link>
           )}
           <span> </span>
-          <CButton className="btn btn-danger">Cancel</CButton>
+          <Link to="/forms/user-contribution-table">
+            <CButton className="btn btn-primary">Cancel</CButton>
+          </Link>
           {/* <CCardLink href="#">Another link</CCardLink> */}
         </CCardBody>
       </CCard>

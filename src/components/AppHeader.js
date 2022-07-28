@@ -24,16 +24,16 @@ const AppHeader = () => {
   const sidebarShow = useSelector((state) => state.sidebarShow)
 
   return (
-    <CHeader position="sticky" className="mb-4">
-      <CContainer fluid style={{ width: '100%', height: 'auto' }}>
+    <CHeader position="sticky">
+      <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
           onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        {sidebarShow == false && (
-          <CHeaderNav style={{ width: '100%', height: 'auto' }}>
+        {sidebarShow === false && (
+          <CHeaderNav>
             <CNavItem>
               <i className="fa-solid fa-place-of-worship fa-fw mx-3"></i>
             </CNavItem>

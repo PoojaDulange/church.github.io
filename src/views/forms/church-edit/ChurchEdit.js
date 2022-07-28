@@ -7,77 +7,162 @@ import {
   CCardHeader,
   CCol,
   CForm,
-  CFormCheck,
   CFormInput,
+  CInputGroup,
   CFormLabel,
   CFormTextarea,
   CRow,
+  CInputGroupText,
 } from '@coreui/react'
+import CIcon from '@coreui/icons-react'
+
+import {
+  cilLockLocked,
+  cilUser,
+  cilLocationPin,
+  cilCircle,
+  cilPhone,
+  cilMobile,
+  cilPin,
+  cilList,
+} from '@coreui/icons'
+
 import { DocsExample } from 'src/components'
 
 const ChurchForm = () => {
+  const user = localStorage.getItem('user')
+  console.log(user)
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4 col-8 m-auto">
           <CCardHeader className="text-center">
-            <strong> Edit Church</strong>
+            <strong>Edit Church</strong>
           </CCardHeader>
           <CCardBody>
             <DocsExample href="forms/form-control">
               <CForm>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="name">Church Name</CFormLabel>
+                <CFormLabel htmlFor="name">
+                  Church Name<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilUser} />
+                  </CInputGroupText>
                   <CFormInput type="text" id="name" placeholder="Enter Church Name" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="description">Description</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="description">
+                  Description<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilList}></CIcon>
+                  </CInputGroupText>
                   <CFormTextarea
                     id="description"
                     rows="3"
                     placeholder="Enter Description"
                   ></CFormTextarea>
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="address1">Address1</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="address1">
+                  Address1<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilLocationPin} />
+                  </CInputGroupText>
                   <CFormInput type="text" id="address1" placeholder="Enter Address1" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="address2">Address2</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="address2">Address2</CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilLocationPin} />
+                  </CInputGroupText>
                   <CFormInput type="text" id="address2" placeholder="Enter Address2" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="city">City</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="city">
+                  City<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilCircle} />
+                  </CInputGroupText>
                   <CFormInput type="text" id="city" placeholder="Enter City" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="state">StateID</CFormLabel>
-                  <CFormInput type="text" id="state" placeholder="Enter StateID" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="zipcode">Zipcode</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="state">
+                  State<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilCircle} />
+                  </CInputGroupText>
+                  <select className="form-select" aria-label="Default select example">
+                    <option value="1">AL</option>
+                    <option value="2">AK</option>
+                    <option value="3">AZ</option>
+                    <option value="1">AR</option>
+                    <option value="2">CA</option>
+                    <option value="3">CO</option>
+                    <option value="1">CT</option>
+                    <option value="2">CR</option>
+                    <option value="3">DE</option>
+                    <option value="1">FL</option>
+                    <option value="2">GA</option>
+                    <option value="3">HI</option>
+                    <option value="1">ID</option>
+                    <option value="2">IL</option>
+                    <option value="3">IN</option>
+                    <option value="1">KS</option>
+                    <option value="2">KY</option>
+                    <option value="3">ME</option>
+                    <option value="1">MD</option>
+                    <option value="2">MA</option>
+                    <option value="3">MI</option>
+                    <option value="1">UT</option>
+                    <option value="2">OR</option>
+                    <option value="3">NY</option>
+                    <option value="3">WH</option>
+                  </select>
+                </CInputGroup>
+                <CFormLabel htmlFor="zipcode">
+                  Zipcode<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilCircle} />
+                  </CInputGroupText>
                   <CFormInput type="text" id="zipcode" placeholder="Enter Zipcode" />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="number">Mobile No.</CFormLabel>
+                </CInputGroup>
+                <CFormLabel htmlFor="number">
+                  Mobile No.<span style={{ color: 'red' }}>*</span>
+                </CFormLabel>
+                <CInputGroup className="mb-3">
+                  <CInputGroupText>
+                    <CIcon icon={cilMobile} />
+                  </CInputGroupText>
                   <CFormInput type="number" id="number" placeholder="Enter Mobile No." />
-                </div>
-                <div className="mb-3">
-                  <CFormLabel htmlFor="churchUrl">Church URL</CFormLabel>
-                  <CFormInput type="text" id="churchUrl" placeholder="Enter Church URL" />
-                </div>
-                <div className="text-center">
-                  <Link to="/forms/church-table">
-                    <CButton color="primary" className="mx-5">
-                      Submit
-                    </CButton>
-                  </Link>
-                  <Link to="/forms/church-table">
-                    <CButton color="danger" className="mx-5">
-                      Cancel
-                    </CButton>
-                  </Link>
-                </div>
+                </CInputGroup>
+                {user === 'sadmin' && (
+                  <div className="gap-2 d-md-flex justify-content-md-center">
+                    <Link to="/forms/church-table">
+                      <CButton>Submit</CButton>
+                    </Link>
+                    <Link to="/forms/church-table">
+                      <CButton>Cancel</CButton>
+                    </Link>
+                  </div>
+                )}
+                {user === 'admin' && (
+                  <div className="gap-2 d-md-flex justify-content-md-center">
+                    <Link to="/forms/church-profile">
+                      <CButton>Submit</CButton>
+                    </Link>
+                    <Link to="/forms/church-profile">
+                      <CButton>Cancel</CButton>
+                    </Link>
+                  </div>
+                )}
+                {/* </div> */}
               </CForm>
             </DocsExample>
           </CCardBody>

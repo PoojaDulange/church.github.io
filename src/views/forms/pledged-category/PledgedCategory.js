@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
 import { Link } from 'react-router-dom'
 import { CButton, CCard, CCardBody, CCardHeader } from '@coreui/react'
-
+import ExcelJS from 'exceljs'
 const PledgedCategory = () => {
   const [search, setSearch] = useState('')
   const [filteredChurches, setFilteredChurches] = useState([])
@@ -34,7 +34,7 @@ const PledgedCategory = () => {
       name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/pledge-add/">
-          <button className="btn btn-warning">Edit</button>
+          <button className="btn btn-primary">Edit</button>
         </Link>
       ),
     },
@@ -53,6 +53,29 @@ const PledgedCategory = () => {
 
     setFilteredChurches(result)
   }, [search])
+  const exportData = () => {
+    const fileName = 'simple.xlsx'
+    const workbook = new ExcelJS.Workbook()
+    const sheet = workbook.addWorksheet('my sheet')
+    sheet.columns = [
+      //   { header: "id", key: "id", width: 10 },
+      { header: 'name', key: 'name', width: 32 },
+      { header: 'description', key: 'description', width: 32 },
+    ]
+    sheet.addRow({
+      name: data.name,
+      description: data.description,
+    })
+    workbook.xlsx
+      .writeBuffer(fileName)
+      .then(() => {
+        console.log('file created')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   return (
     <div className="text-center">
       <CCard className="mt-2">
@@ -65,11 +88,11 @@ const PledgedCategory = () => {
               <Link to="/forms/pledge-add/">
                 <CButton color="primary ">Add New Pledge</CButton>
               </Link>
-              {/* <Link to="/forms/p">
-                <CButton color="primary">Export</CButton>
-              </Link> */}
+              <Link to="">
+                <CButton onClick={exportData}>Export</CButton>
+              </Link>
             </div>
-            <div className="ms-auto">
+            <div className=" ms-auto mb-3">
               <input
                 type="text"
                 placeholder="Search Here"
@@ -89,7 +112,6 @@ const PledgedCategory = () => {
             selectableRows
             selectableRowsHighlight
             highlightOnHover
-            subHeader
           />
         </CCardBody>
       </CCard>

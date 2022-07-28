@@ -17,7 +17,8 @@ import {
 import DataTable from 'react-data-table-component'
 import { string } from 'prop-types'
 import styled from 'styled-components'
-
+import ExcelJS from 'exceljs'
+import Workbook from 'exceljs'
 const ChurchTable = () => {
   const [church, setChurch] = useState([])
   const [search, setSearch] = useState('')
@@ -25,145 +26,145 @@ const ChurchTable = () => {
   const data = [
     {
       id: 0,
-      name: 'GoodNews Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'GoodNews',
+      description: 'Guest',
+      address1: 'North Kierland',
       address2: 'Church road',
       email: 'gn@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '3143739763',
-      mobile: '3423198386',
+      city: 'Scottsdale',
+      stateId: 'AZ',
+      zipcode: '85254',
+      mobile: '342-319-8386',
       url: 'http://goodnews.church/',
     },
     {
       id: 1,
-      name: 'Yourdestiny Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Yourdestiny',
+      description: 'Guest',
+      address1: 'Avocado Ave',
       address2: 'Church road',
       email: 'Yd@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '314373921',
-      mobile: '8634231983',
+      city: 'NewPort Beach',
+      stateId: 'CA',
+      zipcode: '92660',
+      mobile: '863-423-1983',
       url: 'https://www.yourdestiny.church/',
     },
     {
       id: 2,
-      name: 'Gracesterling Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Gracesterling',
+      description: 'Guest',
+      address1: 'Buena Vista',
       address2: 'Church road',
       email: 'gs@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '3143735436',
-      mobile: '4231983422',
+      city: 'Lake Buena Vista',
+      stateId: 'FL',
+      zipcode: '32830',
+      mobile: '423-198-3422',
       url: 'https://gracesterling.com/',
     },
     {
       id: 3,
-      name: 'NewSpring Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'NewSpring',
+      description: 'Guest',
+      address1: 'Mauna Lani',
       address2: 'Church road',
       email: 'ns@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '521373921',
-      mobile: '2319830912',
+      city: 'Kohala coast',
+      stateId: 'HI',
+      zipcode: '96743',
+      mobile: '231-983-0912',
       url: 'https://newspring.cc',
     },
     {
       id: 4,
-      name: 'Go2cornerstone Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Go2cornerstone',
+      description: 'Guest',
+      address1: "Kukui'ula Village",
       address2: 'Church road',
       email: 'g2cs@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '1373921321',
-      mobile: '9830325912',
+      city: 'Koloa',
+      stateId: 'HI',
+      zipcode: '96753',
+      mobile: '983-032-5912',
       url: 'https://go2cornerstone.com/',
     },
     {
       id: 5,
-      name: 'Saddleback Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Saddleback',
+      description: 'Guest',
+      address1: 'Beach Walk',
       address2: 'Church road',
       email: 'sbc@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '213573921',
-      mobile: '2831930912',
+      city: 'Honolulu',
+      stateId: 'HI',
+      zipcode: '96815',
+      mobile: '283-193-0912',
       url: 'https://saddleback.com/',
     },
     {
       id: 6,
-      name: 'Celebration Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Celebration',
+      description: 'Guest',
+      address1: 'Waikoloa Beach',
       address2: 'Church road',
       email: 'cs@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '373521921',
-      mobile: '1983230912',
+      city: 'Wailkoloa',
+      stateId: 'HI',
+      zipcode: '96738',
+      mobile: '198-323-0912',
       url: 'https://celebration.church/',
     },
     {
       id: 7,
       name: 'ChurchontheMove',
-      description: 'pqr',
-      address1: 'Guest',
+      description: 'Guest',
+      address1: 'wailea Drive',
       address2: 'Church road',
       email: 'cotm@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '137323921',
-      mobile: '8309128201',
+      city: 'Kihei',
+      stateId: 'HI',
+      zipcode: '96753',
+      mobile: '830-912-8201',
       url: 'https://churchonthemove.com/',
     },
     {
       id: 8,
-      name: 'Seacoast Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Seacoast',
+      description: 'Guest',
+      address1: 'Bellevue Square',
       address2: 'Church road',
       email: 'sc@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '3739214261',
-      mobile: '2319839102',
+      city: 'Bellevue',
+      stateId: 'WA',
+      zipcode: '98004',
+      mobile: '231-983-9102',
       url: 'https://www.seacoast.org/',
     },
     {
       id: 9,
-      name: 'Gfcflorida Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Gfcflorida',
+      description: 'Guest',
+      address1: 'Bellevue Square',
       address2: 'Church road',
       email: 'gf@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '3736231921',
-      mobile: '6549830912',
+      city: 'Bellevue',
+      stateId: 'WA',
+      zipcode: '98004',
+      mobile: '654-983-0912',
       url: 'https://gfcflorida.com/',
     },
     {
       id: 10,
-      name: 'Crosspoint Church',
-      description: 'pqr',
-      address1: 'Guest',
+      name: 'Crosspoint',
+      description: 'Guest',
+      address1: 'wailea Drive',
       address2: 'Church road',
       email: 'cc@gmail.com',
-      city: 'lmn',
-      stateId: 'LS',
-      zipcode: '3739214104',
-      mobile: '3198230912',
+      city: 'Kihei',
+      stateId: 'HI',
+      zipcode: '96756',
+      mobile: '319-823-0912',
       url: 'https://crosspointechurch.com/',
     },
   ]
@@ -171,13 +172,16 @@ const ChurchTable = () => {
     headCells: {
       style: { background: 'black', color: 'white' },
     },
+    rows: {
+      style: { marginTop: '10px', width: '100%' },
+    },
   }
   const column = [
-    {
-      name: <strong>ChurchId</strong>,
-      selector: (row) => row.id,
-      sortable: true,
-    },
+    // {
+    //   name: <strong>ChurchId</strong>,
+    //   selector: (row) => row.id,
+    //   sortable: true,
+    // },
     {
       name: <strong>Name</strong>,
       selector: (row) => row.name,
@@ -188,16 +192,13 @@ const ChurchTable = () => {
       selector: (row) => row.description,
     },
     {
-      name: <strong>Address1</strong>,
+      name: <strong>Address</strong>,
       selector: (row) => row.address1,
     },
     {
-      name: <strong>Address2</strong>,
-      selector: (row) => row.address2,
-    },
-    {
       name: <strong>Email</strong>,
-      selector: (row) => row.email,
+
+      selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
     },
     {
       name: <strong>City</strong>,
@@ -226,8 +227,8 @@ const ChurchTable = () => {
     {
       name: <strong style={{ fontSize: '18px' }}>Action</strong>,
       cell: (row) => (
-        <Link to="/forms/church-Edit">
-          <CButton className="btn btn-warning">Edit</CButton>
+        <Link to="/forms/church-edit">
+          <CButton>Edit</CButton>
         </Link>
       ),
     },
@@ -241,6 +242,42 @@ const ChurchTable = () => {
 
     setFilteredChurches(result)
   }, [search])
+  const exportData = () => {
+    const fileName = 'simple.xlsx'
+    const workbook = new ExcelJS.Workbook()
+    const sheet = workbook.addWorksheet('my sheet')
+    sheet.columns = [
+      //   { header: "id", key: "id", width: 10 },
+      { header: 'name', key: 'name', with: 32 },
+      { header: 'description', key: 'description', width: 32 },
+      { header: 'address1', key: 'address1', width: 32 },
+      { header: 'city', key: 'city', width: 32 },
+      { header: 'state', key: 'stateId', width: 32 },
+      { header: 'zipcode', key: 'zipcode', width: 32 },
+      { header: 'mobile', key: 'mobile', width: 32 },
+      { header: 'email', key: 'email', width: 32 },
+      { header: 'url', key: 'url', width: 32 },
+    ]
+    sheet.addRow({
+      name: data.name,
+      description: data.description,
+      address1: data.address1,
+      city: data.city,
+      state: data.state,
+      zipcode: data.zipcode,
+      mobile: data.mobile,
+      email: data.email,
+      url: data.url,
+    })
+    workbook.xlsx
+      .writeBuffer(fileName)
+      .then(() => {
+        console.log('file created')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
   return (
     <div className="text-center">
       <CCard className="mt-3">
@@ -257,7 +294,12 @@ const ChurchTable = () => {
                 Print
               </CButton>
             </Link>
-            <div className="ms-auto">
+            <Link to="">
+              <CButton color="primary" onClick={exportData}>
+                Export
+              </CButton>
+            </Link>
+            <div className="ms-auto mb-3">
               <input
                 type="text"
                 placeholder="Search Here"
@@ -273,7 +315,6 @@ const ChurchTable = () => {
             customStyles={customStyles}
             pagination
             fixedHeader
-            fixedHeaderScrollHeight="450px"
             selectableRows
             selectableRowsHighlight
             highlightOnHover

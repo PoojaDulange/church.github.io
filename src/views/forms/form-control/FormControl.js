@@ -9,11 +9,30 @@ import {
   CFormCheck,
   CFormInput,
   CFormLabel,
+  CInputGroup,
+  CInputGroupText,
+  CDropdown,
+  CDropdownItem,
+  CDropdownMenu,
+  CDropdownToggle,
+  CFormSelect,
   CFormTextarea,
   CRow,
 } from '@coreui/react'
+import {
+  cilLockLocked,
+  cilUser,
+  cilLocationPin,
+  cilCircle,
+  cilPhone,
+  cilMobile,
+  cilPin,
+  cilList,
+} from '@coreui/icons'
+
 import { DocsExample } from 'src/components'
 import { Link } from 'react-router-dom'
+import CIcon from '@coreui/icons-react'
 
 const FormControl = () => {
   const user = localStorage.getItem('user')
@@ -30,54 +49,128 @@ const FormControl = () => {
             <CCardBody>
               <DocsExample href="forms/form-control">
                 <CForm>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="firstName">FirstName</CFormLabel>
+                  <CFormLabel htmlFor="firstName">
+                    FirstName<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilUser} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="firstName" placeholder="Enter First Name" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="middleName">MiddleName</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="middleName">
+                    MiddleName<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilUser} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="middleName" placeholder="Enter Middle Name" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="lastName">LastName</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="lastName">
+                    LastName<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilUser} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="lastName" placeholder="Enter Last Name" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="address">Address1</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="address">
+                    Address1<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilLocationPin} />
+                    </CInputGroupText>
                     <CFormTextarea
                       id="address"
                       rows="3"
                       placeholder="Enter Address1"
                     ></CFormTextarea>
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="address">Address2</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="address">Address2</CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilLocationPin} />
+                    </CInputGroupText>
                     <CFormTextarea
                       id="address"
                       rows="3"
                       placeholder="Enter Address2"
                     ></CFormTextarea>
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="city">city</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="city">
+                    City<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilCircle} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="city" placeholder="Enter city" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="state">StateID</CFormLabel>
-                    <CFormInput type="text" id="state" placeholder="Enter StateID" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="zipcode">ZipCode</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="state">
+                    State<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilCircle} />
+                    </CInputGroupText>
+                    <select className="form-select" aria-label="Default select example">
+                      <option value="1">AL</option>
+                      <option value="2">AK</option>
+                      <option value="3">AZ</option>
+                      <option value="1">AR</option>
+                      <option value="2">CA</option>
+                      <option value="3">CO</option>
+                      <option value="1">CT</option>
+                      <option value="2">CR</option>
+                      <option value="3">DE</option>
+                      <option value="1">FL</option>
+                      <option value="2">GA</option>
+                      <option value="3">HI</option>
+                      <option value="1">ID</option>
+                      <option value="2">IL</option>
+                      <option value="3">IN</option>
+                      <option value="1">KS</option>
+                      <option value="2">KY</option>
+                      <option value="3">ME</option>
+                      <option value="1">MD</option>
+                      <option value="2">MA</option>
+                      <option value="3">MI</option>
+                      <option value="1">UT</option>
+                      <option value="2">OR</option>
+                      <option value="3">NY</option>
+                      <option value="3">WH</option>
+                    </select>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="zipcode">
+                    ZipCode<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilCircle} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="zipcode" placeholder="Enter Zipcode" />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="tel">Tel No.</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="tel">
+                    Tel No.<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilPhone} />
+                    </CInputGroupText>
                     <CFormInput type="number" id="tel" placeholder="Enter Tel. No." />
-                  </div>
-                  <div className="mb-3">
-                    <CFormLabel htmlFor="mobile">Mobile No.</CFormLabel>
+                  </CInputGroup>
+                  <CFormLabel htmlFor="mobile">
+                    Mobile No.<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
+                  <CInputGroup className="mb-3">
+                    <CInputGroupText>
+                      <CIcon icon={cilMobile} />
+                    </CInputGroupText>
                     <CFormInput type="text" id="mobile" placeholder="Enter Mobile No." />
-                  </div>
+                  </CInputGroup>
                   {/* <div className="mb-3">
                     <CFormLabel>Gender:</CFormLabel>
                     <CRow>
@@ -88,6 +181,7 @@ const FormControl = () => {
                       </CCol>
                     </CRow>
                   </div> */}
+                  <CFormLabel htmlFor="mobile">Gender*</CFormLabel>
                   <div className="form-check">
                     <input
                       className="form-check-input"
@@ -124,32 +218,32 @@ const FormControl = () => {
                     </label>
                   </div>
                   {user === 'sadmin' && (
-                    <div className="text-center">
+                    <div className="gap-2 d-md-flex justify-content-md-center">
                       <Link to="/forms/church-table/">
-                        <CButton className="btn btn-primary">Submit</CButton>
+                        <CButton>Submit</CButton>
                       </Link>
                       <Link to="/forms/church-table/">
-                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                        <CButton>Cancel</CButton>
                       </Link>
                     </div>
                   )}
                   {user === 'admin' && (
-                    <div className="text-center">
+                    <div className="gap-2 d-md-flex justify-content-md-center">
                       <Link to="/forms/people-table/">
-                        <CButton className="btn btn-primary">Submit</CButton>
+                        <CButton>Submit</CButton>
                       </Link>
                       <Link to="/forms/people-table/">
-                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                        <CButton>Cancel</CButton>
                       </Link>
                     </div>
                   )}
                   {user === 'user' && (
-                    <div className="text-center">
-                      <Link to="/forms/people-table/">
-                        <CButton className="btn btn-primary">Submit</CButton>
+                    <div className="gap-2 d-md-flex justify-content-md-center">
+                      <Link to="/forms/user-profile/">
+                        <CButton>Submit</CButton>
                       </Link>
-                      <Link to="/forms/people-table/">
-                        <CButton className="btn btn-danger mx-3">Cancel</CButton>
+                      <Link to="/forms/user-profile/">
+                        <CButton>Cancel</CButton>
                       </Link>
                     </div>
                   )}
