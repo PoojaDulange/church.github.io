@@ -149,7 +149,9 @@ const Register = () => {
                         />
                       </CInputGroup>
                       <div className="d-md-flex justify-content-md-center">
-                        <CButton color="primary">Create Account</CButton>
+                        <Link to="/">
+                          <CButton color="primary">Create Account</CButton>
+                        </Link>
                       </div>
                       <p className="py-5">
                         Already have an account?
