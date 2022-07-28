@@ -148,7 +148,7 @@ const Register = () => {
                           autoComplete="new-password"
                         />
                       </CInputGroup>
-                      <div className="d-grid">
+                      <div className="d-md-flex justify-content-md-center">
                         <CButton color="primary">Create Account</CButton>
                       </div>
                       <p className="py-5">
