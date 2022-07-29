@@ -28,6 +28,7 @@ const PledgedCategory = () => {
     {
       name: <strong>Description</strong>,
       selector: (row) => row.description,
+      grow: 3,
     },
     {},
     {

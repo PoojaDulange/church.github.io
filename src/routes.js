@@ -42,6 +42,7 @@ const ContributionTable = React.lazy(() =>
   import('./views/forms/contribution-table/ContributionTable'),
 )
 const PeopleTable = React.lazy(() => import('./views/forms/people-table/PeopleTable'))
+const PeopleView = React.lazy(() => import('./views/forms/people-table/View'))
 const UserContributionTable = React.lazy(() =>
   import('./views/forms/user-contribution-table/UserContributionTable'),
 )
@@ -116,6 +117,7 @@ const routes = [
   { path: '/forms/contribution-form', name: 'Contribution Form', element: ContributionForm },
   { path: '/forms/church-table', name: 'Church Table', element: ChurchTable },
   { path: '/forms/people-table', name: 'People Table', element: PeopleTable },
+  { path: '/forms/people-table/view', name: 'PeopleView', element: PeopleView },
   { path: '/forms/pledge-add', name: 'PledgeAdd', element: PledgeAdd },
   { path: '/forms/organization-table', name: 'Organization Table', element: OrganizationTable },
   { path: '/forms/organization-form', name: 'Organization Form', element: OrganizationForm },

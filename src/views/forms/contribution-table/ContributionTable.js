@@ -31,7 +31,7 @@ const ContributionTable = () => {
       userName: 'Rock',
       contributionDate: '11/04/2021',
       Comments: 'Contributed for Church',
-      PledgedAmount: '3000.00',
+      PledgedAmount: '300.00',
     },
     {
       userName: 'John',
@@ -127,6 +127,7 @@ const ContributionTable = () => {
     {
       name: <strong>Pledged Amount ($)</strong>,
       selector: (row) => <p className="align-center">{row.PledgedAmount}</p>,
+      right: true,
     },
   ]
   useEffect(() => {

@@ -44,7 +44,7 @@ const UserContributionTable = () => {
     {
       contributionDate: '08/12/1998',
       Comments: 'For Food',
-      PledgedAmount: '7000.00',
+      PledgedAmount: '700.00',
     },
     {
       contributionDate: '02/06/2015',
@@ -84,6 +84,7 @@ const UserContributionTable = () => {
     {
       name: 'Pledged Amount',
       selector: (row) => row.PledgedAmount,
+      right: true,
     },
   ]
   const customStyles = {

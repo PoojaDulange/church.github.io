@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
@@ -31,20 +30,22 @@ const ChurchProfile = () => {
           style={{ width: '50%', height: '25%' }}
         />
         <CCardBody>
-          <CCardTitle>Church Name</CCardTitle>
-          <CCardText>Church description goes here as a full of para</CCardText>
+          <CCardTitle>Yourdestiny</CCardTitle>
+          <CCardText>Guest</CCardText>
         </CCardBody>
         <CListGroup flush>
-          <CListGroupItem>Church Name</CListGroupItem>
-          <CListGroupItem>Description</CListGroupItem>
-          <CListGroupItem>Address1</CListGroupItem>
-          <CListGroupItem>Address2</CListGroupItem>
-          <CListGroupItem>City</CListGroupItem>
-          <CListGroupItem>State</CListGroupItem>
-          <CListGroupItem>ZipCode</CListGroupItem>
-          <CListGroupItem>MobileNo</CListGroupItem>
-          <CListGroupItem>Email</CListGroupItem>
-          <CListGroupItem>Church URL</CListGroupItem>
+          <CListGroupItem>Avocado Ave</CListGroupItem>
+          <CListGroupItem>Church road</CListGroupItem>
+          <CListGroupItem>NewPort Beach</CListGroupItem>
+          <CListGroupItem>CA</CListGroupItem>
+          <CListGroupItem>92660</CListGroupItem>
+          <CListGroupItem>863-423-1983</CListGroupItem>
+          <CListGroupItem>
+            <a href="mailto:Yd@gmail.com">Yd@gmail.com</a>
+          </CListGroupItem>
+          <CListGroupItem>
+            <a href=" url:https://www.yourdestiny.church/">https://www.yourdestiny.church/</a>
+          </CListGroupItem>
         </CListGroup>
 
         <CCardBody>

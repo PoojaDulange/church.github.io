@@ -15,7 +15,8 @@ import {
   CLink,
   CRow,
 } from '@coreui/react'
-import DataTable from 'react-data-table-component'
+import DataTable, { ExpanderComponentProps } from 'react-data-table-component'
+import { instances } from 'simplebar-react'
 
 function PeopleTable() {
   const [people, setPeople] = useState([])
@@ -30,7 +31,7 @@ function PeopleTable() {
       zipCode: '85254',
       telNo: '217-514131',
       mobileNo: '123-456-7892',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'abc@gmail.com',
     },
     {
@@ -41,7 +42,7 @@ function PeopleTable() {
       zipCode: '92660',
       telNo: '217-514131',
       mobileNo: '123-456-7892',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'xyz@gmail.com',
     },
     {
@@ -52,7 +53,7 @@ function PeopleTable() {
       zipCode: '32830',
       telNo: '217-514133',
       mobileNo: '123-456-7892',
-      gender: 'Male/Female/Other',
+      gender: 'O',
       email: 'pqr@gmail.com',
     },
     {
@@ -63,7 +64,7 @@ function PeopleTable() {
       zipCode: '96743',
       telNo: '217-514132',
       mobileNo: '123-456-7891',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'uvw@gmail.com',
     },
     {
@@ -74,7 +75,7 @@ function PeopleTable() {
       zipCode: '96756',
       telNo: '217-514132',
       mobileNo: '123-456-7896',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'mno@gmail.com',
     },
     {
@@ -85,7 +86,7 @@ function PeopleTable() {
       zipCode: '96815',
       telNo: '217-514132',
       mobileNo: '123-456-7893',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'pqr@gmail.com',
     },
     {
@@ -96,7 +97,7 @@ function PeopleTable() {
       zipCode: '96738',
       telNo: '217-514132',
       mobileNo: '123-456-7897',
-      gender: 'Male/Female/Other',
+      gender: 'F',
       email: 'abc@gmail.com',
     },
     {
@@ -107,7 +108,7 @@ function PeopleTable() {
       zipCode: '96753',
       telNo: '217-514132',
       mobileNo: '123-456-7892',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'bce@gmail.com',
     },
     {
@@ -118,7 +119,7 @@ function PeopleTable() {
       zipCode: '98004',
       telNo: '217-514132',
       mobileNo: '123-456-7898',
-      gender: 'Male/Female/Other',
+      gender: 'O',
       email: 'abc@gmail.com',
     },
     {
@@ -129,7 +130,7 @@ function PeopleTable() {
       zipCode: '85254',
       telNo: '217-514131',
       mobileNo: '123-456-7896',
-      gender: 'Male/Female/Other',
+      gender: 'M',
       email: 'rou@gmail.com',
     },
     {
@@ -140,7 +141,7 @@ function PeopleTable() {
       zipCode: '98004',
       telNo: '217-514132',
       mobileNo: '123-456-7891',
-      gender: 'Male/Female/Other',
+      gender: 'F',
       email: 'yuw@gmail.com',
     },
     {
@@ -151,7 +152,7 @@ function PeopleTable() {
       zipCode: '96753',
       telNo: '217-514132',
       mobileNo: '123-456-7898',
-      gender: 'Male/Female/Other',
+      gender: 'F',
       email: 'xyz@gmail.com',
     },
   ]
@@ -162,6 +163,9 @@ function PeopleTable() {
     rows: {
       style: { marginTop: '10px', width: '100%' },
     },
+    columns: {
+      style: { autoWidth: false },
+    },
   }
   const column = [
     {
@@ -169,8 +173,10 @@ function PeopleTable() {
       selector: (row) => row.name,
     },
     {
-      name: <strong>Address1</strong>,
+      name: <strong>Address</strong>,
       selector: (row) => row.address1,
+      wrapText: true,
+      wrap: true,
     },
 
     {
@@ -181,14 +187,14 @@ function PeopleTable() {
       name: <strong>State</strong>,
       selector: (row) => row.stateID,
     },
-    {
-      name: <strong>ZipCode</strong>,
-      selector: (row) => row.zipCode,
-    },
-    {
-      name: <strong>TelNo</strong>,
-      selector: (row) => row.telNo,
-    },
+    // {
+    //   name: <strong>ZipCode</strong>,
+    //   selector: (row) => row.zipCode,
+    // },
+    // {
+    //   name: <strong>TelNo</strong>,
+    //   selector: (row) => row.telNo,
+    // },
     {
       name: <strong>Mobile</strong>,
       selector: (row) => row.mobileNo,
@@ -196,11 +202,13 @@ function PeopleTable() {
     {
       name: <strong>Gender</strong>,
       selector: (row) => row.gender,
+      minWidth: true,
     },
     {
       name: <strong>Email</strong>,
 
       selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
+      // wrap: true,
     },
     {
       name: <strong>Action</strong>,
@@ -209,6 +217,7 @@ function PeopleTable() {
           <button className="btn btn-primary">Edit</button>
         </Link>
       ),
+      minWidth: true,
     },
   ]
   useEffect(() => {
@@ -256,6 +265,8 @@ function PeopleTable() {
         console.log(err)
       })
   }
+  const isExpanded = (row) => row.defaultExpanded
+
   return (
     <div className="text-center">
       <CCard className="mt-3">
@@ -286,7 +297,7 @@ function PeopleTable() {
           </div>
           <DataTable
             columns={column}
-            data={filteredChurches}
+            data={data}
             pagination
             customStyles={customStyles}
             fixedHeader
@@ -294,6 +305,9 @@ function PeopleTable() {
             selectableRows
             selectableRowsHighlight
             highlightOnHover
+            // expandableRows
+            // expandableRowExpanded={isExpanded}
+            // expandableRowsComponent={<ExpandedComponent />}
             //actions={<button className="btn btn-primary">Export</button>}
             //subHeader
             /* subHeaderComponent={

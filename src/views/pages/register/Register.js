@@ -148,9 +148,12 @@ const Register = () => {
                           autoComplete="new-password"
                         />
                       </CInputGroup>
-                      <div className="d-md-flex justify-content-md-center">
+                      <div className="d-md-flex justify-content-md-center gap-2">
                         <Link to="/">
                           <CButton color="primary">Create Account</CButton>
+                        </Link>
+                        <Link to="/">
+                          <CButton color="primary">Cancel</CButton>
                         </Link>
                       </div>
                       <p className="py-5">
@@ -256,9 +259,12 @@ const Register = () => {
                           autoComplete="new-password"
                         />
                       </CInputGroup>
-                      <div className="d-grid d-md-flex justify-content-md-center">
+                      <div className="d-grid d-md-flex justify-content-md-center gap-2">
                         <Link to="/">
                           <CButton color="primary">Create Account</CButton>
+                        </Link>
+                        <Link to="/">
+                          <CButton color="primary">Cancel</CButton>
                         </Link>
                       </div>
                       <p className="py-5">

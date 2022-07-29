@@ -23,7 +23,7 @@ const OrganizationTable = () => {
       url: 'https://www.greaterbergen.org/',
     },
     {
-      name: 'Teen Missions International',
+      name: 'Teen Missions Int',
       address1: 'Bridge',
       address2: 'Guest',
       state: 'NJ',
@@ -49,7 +49,7 @@ const OrganizationTable = () => {
       url: 'https://www.who.int/',
     },
     {
-      name: 'Paralyzed Veterans Of America',
+      name: 'Paralyzed Veterans',
       address1: 'pqr',
       address2: 'Guest',
       state: 'NJ',
@@ -119,27 +119,31 @@ const OrganizationTable = () => {
       name: <strong>Name</strong>,
       selector: (row) => row.name,
       sortable: true,
+      // wrap: true,
+      left: true,
     },
-    {
-      name: <strong>Address</strong>,
-      selector: (row) => row.address1,
-    },
+    // {
+    //   name: <strong>Address</strong>,
+    //   selector: (row) => row.address1,
+    // },
     // {
     //   name: <strong>Address2</strong>,
     //   selector: (row) => row.address2,
     // },
-    {
-      name: <strong>State</strong>,
-      selector: (row) => row.state,
-    },
+
     {
       name: <strong>City</strong>,
       selector: (row) => row.city,
+      // wrap: true,
     },
-    {
-      name: <strong>ZipCode</strong>,
-      selector: (row) => row.zipcode,
-    },
+    // {
+    //   name: <strong>State</strong>,
+    //   selector: (row) => row.state,
+    // },
+    // {
+    //   name: <strong>ZipCode</strong>,
+    //   selector: (row) => row.zipcode,
+    // },
     // {
     //   name: <strong>TelNo</strong>,
     //   selector: (row) => row.telno,
@@ -147,6 +151,10 @@ const OrganizationTable = () => {
     {
       name: <strong>Mobile</strong>,
       selector: (row) => row.mobno,
+    },
+    {
+      name: <strong>email</strong>,
+      selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
     },
     // {
     //   name: <strong>Email</strong>,
@@ -159,6 +167,7 @@ const OrganizationTable = () => {
           {row.url}
         </a>
       ),
+      grow: 2,
     },
     // {
     //   name: <strong>EnrolledOn</strong>,
@@ -188,6 +197,15 @@ const OrganizationTable = () => {
     },
     rows: {
       style: { marginTop: '10px', width: '100%' },
+    },
+    DataTable: {
+      style: { color: 'red' },
+    },
+    columns: {
+      style: { wrap: true },
+    },
+    cells: {
+      style: {},
     },
   }
   const exportData = () => {

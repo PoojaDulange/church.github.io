@@ -187,18 +187,13 @@ const ChurchTable = () => {
       selector: (row) => row.name,
       sortable: true,
     },
-    {
-      name: <strong>Description</strong>,
-      selector: (row) => row.description,
-    },
+    // {
+    //   name: <strong>Description</strong>,
+    //   selector: (row) => row.description,
+    // },
     {
       name: <strong>Address</strong>,
       selector: (row) => row.address1,
-    },
-    {
-      name: <strong>Email</strong>,
-
-      selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
     },
     {
       name: <strong>City</strong>,
@@ -208,14 +203,20 @@ const ChurchTable = () => {
       name: <strong>State</strong>,
       selector: (row) => row.stateId,
     },
-    {
-      name: <strong>ZipCode</strong>,
-      selector: (row) => row.zipcode,
-    },
+    // {
+    //   name: <strong>ZipCode</strong>,
+    //   selector: (row) => row.zipcode,
+    // },
     {
       name: <strong>Mobile</strong>,
       selector: (row) => row.mobile,
     },
+    {
+      name: <strong>Email</strong>,
+
+      selector: (row) => <a href={`mailto:${row.email}`}>{row.email}</a>,
+    },
+
     {
       name: <strong>URL</strong>,
       selector: (row) => (
