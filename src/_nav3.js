@@ -17,8 +17,9 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const user = localStorage.getItem('user')
 // var randomItem = array[Math.floor(Math.random() * array.length)]
-localStorage.setItem('name', 'Individual')
+console.log(user)
 
+localStorage.setItem('name', 'Organization')
 const h1 = localStorage.getItem('name')
 console.log(h1)
 const _nav = [
@@ -35,7 +36,7 @@ const _nav = [
 
   {
     component: CNavGroup,
-    name: 'Individual',
+    name: 'Organization',
     icon: <i className="fa-solid fa-building-user m-auto"></i>,
     items: [
       {

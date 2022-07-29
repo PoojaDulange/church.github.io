@@ -41,16 +41,16 @@ const Contribution = () => {
                 <CFormInput type="number" id="id" placeholder="enter your id" />
               </div> */}
               <CFormLabel htmlFor="date">
-                ContributionDate<span style={{ color: 'red' }}>*</span>
+                Contribution Date<span style={{ color: 'red' }}>*</span>
               </CFormLabel>
               <CInputGroup className="mb-3">
                 <CInputGroupText>
                   <CIcon icon={cilCalendar} />
                 </CInputGroupText>
-                <CFormInput type="datetime-local" id="date" placeholder="Enter Date" />
+                <CFormInput type="date" id="date" placeholder="Enter Date" />
               </CInputGroup>
               <CFormLabel htmlFor="name">
-                PledgeCategoryName<span style={{ color: 'red' }}>*</span>
+                Pledge Category Name<span style={{ color: 'red' }}>*</span>
               </CFormLabel>
               <CInputGroup className="mb-3">
                 <CInputGroupText>
@@ -77,14 +77,14 @@ const Contribution = () => {
                 <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
               </CInputGroup>
               <CFormLabel htmlFor="amount">
-                PlegdedAmount<span style={{ color: 'red' }}>*</span>
+                Plegded Amount<span style={{ color: 'red' }}>*</span>
               </CFormLabel>
               <CInputGroup className="mb-3">
                 <CInputGroupText>
                   <CIcon icon={cilMoney} />
                 </CInputGroupText>
 
-                <CFormInput type="number" id="amount" placeholder="Enter Pledged Amount" />
+                <CFormInput type="text" id="amount" placeholder="Enter Pledged Amount" />
               </CInputGroup>
               {/* <div>
                 <CFormLabel htmlFor="exampleFormControlInput1">Memorial </CFormLabel>

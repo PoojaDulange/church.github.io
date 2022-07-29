@@ -84,7 +84,14 @@ const Login = () => {
                             </CButton>
                           </Link>
                         )}
-                        {user === 'user' && (
+                        {user === 'individual' && (
+                          <Link to="/forms/user-contribution-table/">
+                            <CButton color="primary" className="px-4">
+                              Login
+                            </CButton>
+                          </Link>
+                        )}
+                        {user === 'organization' && (
                           <Link to="/forms/user-contribution-table/">
                             <CButton color="primary" className="px-4">
                               Login

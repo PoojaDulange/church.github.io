@@ -44,13 +44,13 @@ const FormControl = () => {
             <CCardHeader className="text-center">
               {user == 'sadmin' && <strong>Church Admin</strong>}
               {user == 'admin' && <strong>Individual</strong>}
-              {user == 'user' && <strong>Individual</strong>}
+              {user == 'individual' && <strong>Individual</strong>}
             </CCardHeader>
             <CCardBody>
               <DocsExample href="forms/form-control">
                 <CForm>
                   <CFormLabel htmlFor="firstName">
-                    FirstName<span style={{ color: 'red' }}>*</span>
+                    First Name<span style={{ color: 'red' }}>*</span>
                   </CFormLabel>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
@@ -59,7 +59,7 @@ const FormControl = () => {
                     <CFormInput type="text" id="firstName" placeholder="Enter First Name" />
                   </CInputGroup>
                   <CFormLabel htmlFor="middleName">
-                    MiddleName<span style={{ color: 'red' }}>*</span>
+                    Middle Name<span style={{ color: 'red' }}>*</span>
                   </CFormLabel>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
@@ -68,7 +68,7 @@ const FormControl = () => {
                     <CFormInput type="text" id="middleName" placeholder="Enter Middle Name" />
                   </CInputGroup>
                   <CFormLabel htmlFor="lastName">
-                    LastName<span style={{ color: 'red' }}>*</span>
+                    Last Name<span style={{ color: 'red' }}>*</span>
                   </CFormLabel>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
@@ -160,7 +160,7 @@ const FormControl = () => {
                     <CInputGroupText>
                       <CIcon icon={cilPhone} />
                     </CInputGroupText>
-                    <CFormInput type="number" id="tel" placeholder="Enter Tel. No." />
+                    <CFormInput type="text" id="tel" placeholder="Enter Tel. No." />
                   </CInputGroup>
                   <CFormLabel htmlFor="mobile">
                     Mobile No.<span style={{ color: 'red' }}>*</span>
@@ -181,7 +181,9 @@ const FormControl = () => {
                       </CCol>
                     </CRow>
                   </div> */}
-                  <CFormLabel htmlFor="mobile">Gender*</CFormLabel>
+                  <CFormLabel htmlFor="mobile">
+                    Gender<span style={{ color: 'red' }}>*</span>
+                  </CFormLabel>
                   <div className="form-check">
                     <input
                       className="form-check-input"
@@ -237,7 +239,7 @@ const FormControl = () => {
                       </Link>
                     </div>
                   )}
-                  {user === 'user' && (
+                  {user === 'individual' && (
                     <div className="gap-2 d-md-flex justify-content-md-center">
                       <Link to="/forms/user-profile/">
                         <CButton>Submit</CButton>

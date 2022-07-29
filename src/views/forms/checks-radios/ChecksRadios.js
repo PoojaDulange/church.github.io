@@ -33,8 +33,16 @@ const ChecksRadios = ({ onChange }) => {
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault3"
-                label="User"
-                value="user"
+                label="User-Organization"
+                value="organization"
+                onChange={onChange}
+              />
+              <CFormCheck
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault3"
+                label="User-Individual"
+                value="individual"
                 onChange={onChange}
               />
             </DocsExample>

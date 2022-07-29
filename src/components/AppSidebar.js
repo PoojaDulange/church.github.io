@@ -16,7 +16,7 @@ import 'simplebar/dist/simplebar.min.css'
 import navigation from '../_nav'
 import navigation1 from '../_nav1'
 import navigation2 from '../_nav2'
-
+import navigation3 from '../_nav3'
 const AppSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
@@ -40,9 +40,10 @@ const AppSidebar = () => {
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
-          {user == 'sadmin' && <AppSidebarNav items={navigation} />}
-          {user == 'admin' && <AppSidebarNav items={navigation1} />}
-          {user == 'user' && <AppSidebarNav items={navigation2} />}
+          {user === 'sadmin' && <AppSidebarNav items={navigation} />}
+          {user === 'admin' && <AppSidebarNav items={navigation1} />}
+          {user === 'organization' && <AppSidebarNav items={navigation3} />}
+          {user === 'individual' && <AppSidebarNav items={navigation2} />}
         </SimpleBar>
       </CSidebarNav>
       <CSidebarToggler

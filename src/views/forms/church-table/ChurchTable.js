@@ -191,18 +191,19 @@ const ChurchTable = () => {
     //   name: <strong>Description</strong>,
     //   selector: (row) => row.description,
     // },
-    {
-      name: <strong>Address</strong>,
-      selector: (row) => row.address1,
-    },
+    // {
+    //   name: <strong>Address</strong>,
+    //   selector: (row) => row.address1,
+    // },
     {
       name: <strong>City</strong>,
       selector: (row) => row.city,
     },
-    {
-      name: <strong>State</strong>,
-      selector: (row) => row.stateId,
-    },
+    // {
+    //   name: <strong>State</strong>,
+    //   selector: (row) => row.stateId,
+    //   autoWidth: 'none',
+    // },
     // {
     //   name: <strong>ZipCode</strong>,
     //   selector: (row) => row.zipcode,
@@ -221,12 +222,12 @@ const ChurchTable = () => {
       name: <strong>URL</strong>,
       selector: (row) => (
         <a href={row.url} target="_blank" rel="noreferrer">
-          {row.name}
+          {row.url}
         </a>
       ),
     },
     {
-      name: <strong style={{ fontSize: '18px' }}>Action</strong>,
+      name: <strong>Action</strong>,
       cell: (row) => (
         <Link to="/forms/church-edit">
           <CButton>Edit</CButton>

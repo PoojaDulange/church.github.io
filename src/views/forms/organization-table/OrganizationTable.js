@@ -174,7 +174,7 @@ const OrganizationTable = () => {
     //   selector: (row) => row.enrolledon,
     // },
     {
-      name: <strong>Action</strong>,
+      name: 'Action',
       cell: (row) => (
         <Link to="/forms/organization-form/">
           <button className="btn btn-primary">Edit</button>

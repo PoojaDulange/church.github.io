@@ -134,7 +134,7 @@ const organizationForm = () => {
                   </Link>
                 </div>
               )}
-              {user === 'user' && (
+              {user === 'organization' && (
                 <div className="d-md-flex justify-content-md-center gap-2">
                   <Link to="/forms/user-profile">
                     <CButton type="submit">Submit</CButton>

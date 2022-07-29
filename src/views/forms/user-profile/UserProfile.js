@@ -22,10 +22,10 @@ import {
 import img from 'src/assets/images/avatars/8.jpg'
 import img1 from 'src/assets/images/company.jpg'
 const UserProfile = () => {
-  const user = localStorage.getItem('name')
+  const user = localStorage.getItem('user')
   return (
     <div>
-      {user === 'Organization' && (
+      {user === 'organization' && (
         <CCard style={{ width: '70%', margin: 'auto', height: 'auto' }}>
           <CCardImage
             className=" mt-3  mb-3 mx-auto"
@@ -67,7 +67,7 @@ const UserProfile = () => {
           </CCardBody>
         </CCard>
       )}
-      {user === 'Individual' && (
+      {user === 'individual' && (
         <CCard style={{ width: '70%', margin: 'auto', height: 'auto' }}>
           <CCardImage
             className=" mt-3  mb-3 mx-auto"
